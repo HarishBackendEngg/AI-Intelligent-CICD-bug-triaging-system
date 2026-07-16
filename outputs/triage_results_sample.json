@@ -1,0 +1,95 @@
+[
+  {
+    "build_id": "BUILD-5000",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "REST-API Cleanup Failed: 401 Unauthorized Due to Expired Token",
+      "component": "REST-API",
+      "error_message": "DELETE /api/rest/v1/volume/VOL89DLBNP7 returned HTTP 401 Unauthorized",
+      "symptoms": "19 volumes orphaned on fc-matrix-env environment",
+      "category": "product"
+    },
+    "top_match_ticket_id": null,
+    "top_match_score": 0.6111111111111112,
+    "is_duplicate": false,
+    "confidence": 1.0,
+    "reason": "No candidate above similarity threshold",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5001",
+    "failure_category": "infrastructure",
+    "bug_fields": {
+      "bug_title": "VolumeManager Timing Race Condition Causes Mount Timeout",
+      "component": "VolumeManager",
+      "error_message": "AssertionError: volume VOLUDGZVGT9 mount state expected MOUNTED, got MOUNTING. Wait timeout: 45s exceeded",
+      "symptoms": "Test failures in failover_test and regression_sanity due to mount state timeout",
+      "category": "infrastructure"
+    },
+    "top_match_ticket_id": null,
+    "top_match_score": 0.5,
+    "is_duplicate": false,
+    "confidence": 1.0,
+    "reason": "No candidate above similarity threshold",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5002",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "SnapEngine ENOSPC Error: Space Accounting Mismatch",
+      "component": "SnapEngine",
+      "error_message": "ENOSPC: Space accounting mismatch between available blocks and metadata reserved",
+      "symptoms": "Snapshot creation failed with ENOSPC, preventing storage allocation despite available space",
+      "category": "product"
+    },
+    "top_match_ticket_id": "PSTR-1032",
+    "top_match_score": 1.0,
+    "is_duplicate": true,
+    "confidence": 0.95,
+    "reason": "Identical ENOSPC error in SnapEngine's space accounting causing snapshot failures despite available space, with matching component and root cause description.",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Run pool reclamation task manually: powerstore pool reclaim --id {pool_id} --force",
+      "Retry snapshot creation after reclamation"
+    ]
+  },
+  {
+    "build_id": "BUILD-5003",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "AutoSupport Upload Fails Due to TLS Handshake Incompatibility",
+      "component": "AutoSupport",
+      "error_message": "SSL_ERROR_HANDSHAKE_FAILURE: Incompatible TLS versions (TLS 1.0 vs. required TLS 1.2+)",
+      "symptoms": "AutoSupport upload fails with SSL_ERROR_HANDSHAKE_FAILURE indicating server requires TLS 1.2+",
+      "category": "product"
+    },
+    "top_match_ticket_id": null,
+    "top_match_score": 0.7,
+    "is_duplicate": false,
+    "confidence": 1.0,
+    "reason": "No candidate above similarity threshold",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5004",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "Version Conflict Between Requests and RequestsLibrary Causes ImportError",
+      "component": "REST-API",
+      "error_message": "ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt",
+      "symptoms": "NVMe_Performance test suite failed to execute, resulting in pipeline termination",
+      "category": "product"
+    },
+    "top_match_ticket_id": null,
+    "top_match_score": 0.55,
+    "is_duplicate": false,
+    "confidence": 1.0,
+    "reason": "No candidate above similarity threshold",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
+  }
+]

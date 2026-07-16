@@ -1,0 +1,50 @@
+{
+  "n_evaluated": 150,
+  "binary_duplicate_detection": {
+    "precision": 0.5655,
+    "recall": 1.0,
+    "f1": 0.7225,
+    "accuracy": 0.58,
+    "tp": 82,
+    "fp": 63,
+    "fn": 0,
+    "tn": 5
+  },
+  "three_way_action_classification": {
+    "overall_accuracy": 0.3667,
+    "n": 150,
+    "per_class": {
+      "DUPLICATE": {
+        "precision": 0.2941,
+        "recall": 0.303,
+        "f1": 0.2985,
+        "accuracy": 0.6867,
+        "tp": 10,
+        "fp": 24,
+        "fn": 23,
+        "tn": 93
+      },
+      "WORKAROUND_AVAILABLE": {
+        "precision": 0.3604,
+        "recall": 0.8163,
+        "f1": 0.5,
+        "accuracy": 0.4667,
+        "tp": 40,
+        "fp": 71,
+        "fn": 9,
+        "tn": 30
+      },
+      "NEW_ISSUE": {
+        "precision": 1.0,
+        "recall": 0.0735,
+        "f1": 0.137,
+        "accuracy": 0.58,
+        "tp": 5,
+        "fp": 0,
+        "fn": 63,
+        "tn": 82
+      }
+    },
+    "note": "NOT_DUPLICATE ground-truth rows mapped to NEW_ISSUE \u2014 see docstring for rationale."
+  }
+}

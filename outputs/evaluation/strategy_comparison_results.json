@@ -1,0 +1,35 @@
+[
+  {
+    "strategy": "zero_shot",
+    "precision": 0.5655,
+    "recall": 1.0,
+    "f1": 0.7225,
+    "accuracy": 0.58,
+    "tp": 82,
+    "fp": 63,
+    "fn": 0,
+    "tn": 5
+  },
+  {
+    "strategy": "few_shot",
+    "precision": 0.5655,
+    "recall": 1.0,
+    "f1": 0.7225,
+    "accuracy": 0.58,
+    "tp": 82,
+    "fp": 63,
+    "fn": 0,
+    "tn": 5
+  },
+  {
+    "strategy": "chain_of_thought",
+    "precision": 0.5655,
+    "recall": 1.0,
+    "f1": 0.7225,
+    "accuracy": 0.58,
+    "tp": 82,
+    "fp": 63,
+    "fn": 0,
+    "tn": 5
+  }
+]

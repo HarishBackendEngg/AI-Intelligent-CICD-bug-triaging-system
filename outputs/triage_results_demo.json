@@ -1,0 +1,308 @@
+[
+  {
+    "build_id": "BUILD-5000",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The REST-API component failed during pipeline execution. Failure summary: Test d",
+      "component": "REST-API",
+      "error_message": "Error: Cleanup failed: DELETE /api/rest/v1/volume/VOL89DLBNP7 returned HTTP 401 Unauthorized. Token expired during long-running test suite. 2 volumes not deleted.",
+      "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1204",
+    "top_match_score": 0.032018442622950824,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1204",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Cleanup job now uses service account with non-expiring token",
+      "Token refresh added as first step of cleanup script",
+      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --force"
+    ]
+  },
+  {
+    "build_id": "BUILD-5001",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The VolumeManager component failed during pipeline execution. Failure summary: T",
+      "component": "VolumeManager",
+      "error_message": "Error: AssertionError: volume VOLUDGZVGT9 mount state expected MOUNTED, got MOUNTING. Wait timeout: 45s exceeded. Test: failover_test.",
+      "symptoms": "Observed during VolumeManager validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1174",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1174",
+    "action": "DUPLICATE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5002",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "The SnapEngine component failed during pipeline execution. Failure summary: Snap",
+      "component": "SnapEngine",
+      "error_message": "Error: Snapshot create failed: pool_id=POOLA691X3, error=ENOSPC (28), available_blocks=512976, metadata_reserved=67789. Space accounting mismatch detected.",
+      "symptoms": "Observed during SnapEngine validation; pipeline marked FAILURE",
+      "category": "product"
+    },
+    "top_match_ticket_id": null,
+    "top_match_score": 0.032266458495966696,
+    "is_duplicate": false,
+    "confidence": 0.55,
+    "reason": "No candidate shares the same underlying failure template",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5003",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "The AutoSupport component failed during pipeline execution. Failure summary: Aut",
+      "component": "AutoSupport",
+      "error_message": "Error: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.",
+      "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
+      "category": "product"
+    },
+    "top_match_ticket_id": "PSTR-1063",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1063",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "AutoSupport client updated to enforce TLS 1",
+      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1",
+      "Or manually upload bundles via dell"
+    ]
+  },
+  {
+    "build_id": "BUILD-5004",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The REST-API component failed during pipeline execution. Failure summary: Robot ",
+      "component": "REST-API",
+      "error_message": "Error: ImportError: cannot import name 'Session' from 'requests' (version 2.27.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.",
+      "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1198",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1198",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "txt updated with pinned compatible versions",
+      "Dependency audit added to CI pipeline pre-check stage",
+      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinstall in"
+    ]
+  },
+  {
+    "build_id": "BUILD-5005",
+    "failure_category": "infrastructure",
+    "bug_fields": {
+      "bug_title": "The FaultManager component failed during pipeline execution. Failure summary: Po",
+      "component": "FaultManager",
+      "error_message": "Error: Firmware upgrade interrupted: node_B reboot detected at step 16/24. Upgrade halted at 58%. Array state: MAINTENANCE_MODE. Recovery required.",
+      "symptoms": "Observed during FaultManager validation; pipeline marked FAILURE",
+      "category": "infrastructure"
+    },
+    "top_match_ticket_id": "PSTR-1169",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1169",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Upgrade sequencer fixed to handle unexpected reboots gracefully",
+      "Rollback and retry logic added in upgrade framework",
+      "Run upgrade recovery procedure: powerstore upgrade recover --array {env}"
+    ]
+  },
+  {
+    "build_id": "BUILD-5006",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The REST-API component failed during pipeline execution. Failure summary: Pytest",
+      "component": "REST-API",
+      "error_message": "Error: POWERSTORE_HOST=10.201.210.197 \u2014 production array targeted. Expected: 10.245.177.131. Env var not reset from previous run. Tests executed against wrong target.",
+      "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1093",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1093",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Pipeline now uses isolated environment namespaces per run",
+      "Environment variables scoped to pipeline execution context",
+      "Always run tests with explicit --target flag: pytest --target={cor"
+    ]
+  },
+  {
+    "build_id": "BUILD-5007",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The PowerStore-Core component failed during pipeline execution. Failure summary:",
+      "component": "PowerStore-Core",
+      "error_message": "Error: pytest collected 0 items after marker filter '-m sanity and not integration'. Expected ~64 tests. Tests NOT RUN. Build marked SUCCESS incorrectly.",
+      "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1232",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1232",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Test suite execution configuration reviewed",
+      "Marker expressions validated against expected test counts as gate check",
+      "Update Jenkinsfile pytest command: change '-m sanity and not integration"
+    ]
+  },
+  {
+    "build_id": "BUILD-5008",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "The Metro-Volume component failed during pipeline execution. Failure summary: Me",
+      "component": "Metro-Volume",
+      "error_message": "Error: Metro Volume [VOL77NW6VT9] RPO threshold exceeded: current lag=192ms, threshold=50ms. Sync state: DEGRADED.",
+      "symptoms": "Observed during Metro-Volume validation; pipeline marked FAILURE",
+      "category": "product"
+    },
+    "top_match_ticket_id": "PSTR-1031",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1031",
+    "action": "DUPLICATE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5009",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The PowerStore-Core component failed during pipeline execution. Failure summary:",
+      "component": "PowerStore-Core",
+      "error_message": "Error: UNREACHABLE: powerstore-lab-02 - SSH Error: Host key verification failed. Known hosts mismatch. Offending key: /home/jenkins/.ssh/known_hosts:94.",
+      "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1283",
+    "top_match_score": 0.03252247488101534,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1283",
+    "action": "DUPLICATE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5010",
+    "failure_category": "automation",
+    "bug_fields": {
+      "bug_title": "The REST-API component failed during pipeline execution. Failure summary: Robot ",
+      "component": "REST-API",
+      "error_message": "Error: ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.",
+      "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
+      "category": "automation"
+    },
+    "top_match_ticket_id": "PSTR-1156",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1156",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "txt updated with pinned compatible versions",
+      "Dependency audit added to CI pipeline pre-check stage",
+      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinsta"
+    ]
+  },
+  {
+    "build_id": "BUILD-5011",
+    "failure_category": "infrastructure",
+    "bug_fields": {
+      "bug_title": "The StoragePool component failed during pipeline execution. Failure summary: Sto",
+      "component": "StoragePool",
+      "error_message": "Error: Write failed: pool_id=POOLMPZQIW, usage=97%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.",
+      "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
+      "category": "infrastructure"
+    },
+    "top_match_ticket_id": "PSTR-1123",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1123",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Alert threshold lowered to 80% to provide advance warning",
+      "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
+      "Then run pool cleanup ta"
+    ]
+  },
+  {
+    "build_id": "BUILD-5012",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "The FC-HBA component failed during pipeline execution. Failure summary: FC HBA p",
+      "component": "FC-HBA",
+      "error_message": "Error: FC path failover: primary path 49:76:13:68:5b:ef:34:d0 lost. Failover to 42:d8:f8:f7:88:50:4a:a2 completed in 159s. SCSI error recovery: UA 0x29/0x00.",
+      "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
+      "category": "product"
+    },
+    "top_match_ticket_id": null,
+    "top_match_score": 0.03252247488101534,
+    "is_duplicate": false,
+    "confidence": 0.55,
+    "reason": "No candidate shares the same underlying failure template",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5013",
+    "failure_category": "product",
+    "bug_fields": {
+      "bug_title": "The REST-API component failed during pipeline execution. Failure summary: REST A",
+      "component": "REST-API",
+      "error_message": "Error: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLTPZVE9W5/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXN323C6VC7RD.",
+      "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
+      "category": "product"
+    },
+    "top_match_ticket_id": "PSTR-1244",
+    "top_match_score": 0.032266458495966696,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1244",
+    "action": "DUPLICATE",
+    "workaround_steps": []
+  },
+  {
+    "build_id": "BUILD-5014",
+    "failure_category": "infrastructure",
+    "bug_fields": {
+      "bug_title": "The StoragePool component failed during pipeline execution. Failure summary: Sto",
+      "component": "StoragePool",
+      "error_message": "Error: Write failed: pool_id=POOLOT6Y8S, usage=99%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.",
+      "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
+      "category": "infrastructure"
+    },
+    "top_match_ticket_id": "PSTR-1006",
+    "top_match_score": 0.03278688524590164,
+    "is_duplicate": true,
+    "confidence": 0.93,
+    "reason": "Template signal matches ticket PSTR-1006",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Alert threshold lowered to 80% to provide advance warning",
+      "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
+      "Then run pool cleanup task"
+    ]
+  }
+]

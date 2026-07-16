@@ -1,0 +1,1052 @@
+[
+  {
+    "build_id": "BUILD-5000",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on fc-matrix-env\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOL89DLBNP7 returned HTTP 401 Unauthorized. Token expired during long-running test suite. 2 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOL1WJ2IBA2 returned HTTP 401 Unauthorized. Token expired during long-running test suite. 19 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5001",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "VolumeManager",
+    "cleaned_text": "Failure summary: Test framework assertion error due to timing race condition\nComponent: VolumeManager\nError: AssertionError: volume VOLUDGZVGT9 mount state expected MOUNTED, got MOUNTING. Wait timeout: 45s exceeded. Test: failover_test.\n--- Extracted log lines ---\nERROR: AssertionError: volume VOLBZQT1WGX mount state expected MOUNTED, got MOUNTING. Wait timeout: 45s exceeded. Test: regression_sanity."
+  },
+  {
+    "build_id": "BUILD-5002",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "SnapEngine",
+    "cleaned_text": "Failure summary: Snapshot creation fails with ENOSPC on StoragePool POOLOHB3ZN\nComponent: SnapEngine\nError: Snapshot create failed: pool_id=POOLA691X3, error=ENOSPC (28), available_blocks=512976, metadata_reserved=67789. Space accounting mismatch detected.\n--- Extracted log lines ---\nERROR: Snapshot create failed: pool_id=POOL0ZO1FN, error=ENOSPC (28), available_blocks=671826, metadata_reserved=66369. Space accounting mismatch detected."
+  },
+  {
+    "build_id": "BUILD-5003",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on san-testbed-qa-03\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5004",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Robot Framework library version conflict breaks NVMe_Performance suite\nComponent: REST-API\nError: ImportError: cannot import name 'Session' from 'requests' (version 2.27.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.\n--- Extracted log lines ---\nERROR: ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt."
+  },
+  {
+    "build_id": "BUILD-5005",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on fc-matrix-env\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 16/24. Upgrade halted at 58%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 13/24. Upgrade halted at 45%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5006",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Pytest environment variable misconfiguration causes wrong target on replication-testbed\nComponent: REST-API\nError: POWERSTORE_HOST=10.201.210.197 \u2014 production array targeted. Expected: 10.245.177.131. Env var not reset from previous run. Tests executed against wrong target.\n--- Extracted log lines ---\nERROR: POWERSTORE_HOST=10.127.122.108 \u2014 production array targeted. Expected: 10.211.209.187. Env var not reset from previous run. Tests executed against wrong target."
+  },
+  {
+    "build_id": "BUILD-5007",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: CI pipeline skips critical tests due to wrong pytest marker filter\nComponent: PowerStore-Core\nError: pytest collected 0 items after marker filter '-m sanity and not integration'. Expected ~64 tests. Tests NOT RUN. Build marked SUCCESS incorrectly.\n--- Extracted log lines ---\nERROR: pytest collected 0 items after marker filter '-m sanity and not integration'. Expected ~45 tests. Tests NOT RUN. Build marked SUCCESS incorrectly."
+  },
+  {
+    "build_id": "BUILD-5008",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "Metro-Volume",
+    "cleaned_text": "Failure summary: Metro Volume replication lag exceeds SLA threshold on powerstore-lab-02\nComponent: Metro-Volume\nError: Metro Volume [VOL77NW6VT9] RPO threshold exceeded: current lag=192ms, threshold=50ms. Sync state: DEGRADED.\n--- Extracted log lines ---\nERROR: Metro Volume [VOL1FAREJO0] RPO threshold exceeded: current lag=282ms, threshold=50ms. Sync state: DEGRADED."
+  },
+  {
+    "build_id": "BUILD-5009",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Ansible playbook fails with SSH key mismatch on powerstore-lab-02\nComponent: PowerStore-Core\nError: UNREACHABLE: powerstore-lab-02 - SSH Error: Host key verification failed. Known hosts mismatch. Offending key: /home/jenkins/.ssh/known_hosts:94.\n--- Extracted log lines ---\nERROR: UNREACHABLE: powerstore-lab-02 - SSH Error: Host key verification failed. Known hosts mismatch. Offending key: /home/jenkins/.ssh/known_hosts:153."
+  },
+  {
+    "build_id": "BUILD-5010",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Robot Framework library version conflict breaks NVMe_Performance suite\nComponent: REST-API\nError: ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.\n--- Extracted log lines ---\nERROR: ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt."
+  },
+  {
+    "build_id": "BUILD-5011",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on vmware-integration-env reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOLMPZQIW, usage=97%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOLQ595BQ, usage=96%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5012",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC HBA path failover takes 75s instead of expected 30s\nComponent: FC-HBA\nError: FC path failover: primary path 49:76:13:68:5b:ef:34:d0 lost. Failover to 42:d8:f8:f7:88:50:4a:a2 completed in 159s. SCSI error recovery: UA 0x29/0x00.\n--- Extracted log lines ---\nERROR: FC path failover: primary path 92:b6:e4:03:6b:ca:c9:4d lost. Failover to f9:4d:4c:e0:70:fa:95:3c completed in 97s. SCSI error recovery: UA 0x29/0x00."
+  },
+  {
+    "build_id": "BUILD-5013",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLTPZVE9W5/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXN323C6VC7RD.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLNZO08L00/clone. Backend: DB_LOCK_TIMEOUT after 45ms on table vol_metadata. Transaction ID: TXNH9YBAZY283."
+  },
+  {
+    "build_id": "BUILD-5014",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on powerstore-lab-01 reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOLOT6Y8S, usage=99%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOL7GXN94, usage=97%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5015",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on vmware-integration-env\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOLT1ZP03FV returned HTTP 401 Unauthorized. Token expired during long-running test suite. 12 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOLEO8T2UX7 returned HTTP 401 Unauthorized. Token expired during long-running test suite. 3 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5016",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "SnapEngine",
+    "cleaned_text": "Failure summary: Snapshot creation fails with ENOSPC on StoragePool POOLHENXTV\nComponent: SnapEngine\nError: Snapshot create failed: pool_id=POOLAAWH6X, error=ENOSPC (28), available_blocks=879777, metadata_reserved=78619. Space accounting mismatch detected.\n--- Extracted log lines ---\nERROR: Snapshot create failed: pool_id=POOL3QYHMD, error=ENOSPC (28), available_blocks=327126, metadata_reserved=52134. Space accounting mismatch detected."
+  },
+  {
+    "build_id": "BUILD-5017",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: Lab test node san-testbed-qa-03 went offline during nightly regression\nComponent: HealthMonitor\nError: Connection refused: ssh san-testbed-qa-03:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 21:55:46.\n--- Extracted log lines ---\nERROR: Connection refused: ssh san-testbed-qa-03:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 06:10:44."
+  },
+  {
+    "build_id": "BUILD-5018",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on san-testbed-qa-03\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 12/24. Upgrade halted at 72%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 8/24. Upgrade halted at 31%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5019",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Docker container OOM kill during stress test on powerstore-lab-01\nComponent: PowerStore-Core\nError: OOM killer invoked: container=ctra95qfwkzscn7, mem_limit=1024MB, peak_usage=3423MB. Process killed: stress-ng PID 50402. Exit code: 137.\n--- Extracted log lines ---\nERROR: OOM killer invoked: container=ctr7xbfgxs2gxlv, mem_limit=512MB, peak_usage=2783MB. Process killed: stress-ng PID 54945. Exit code: 137."
+  },
+  {
+    "build_id": "BUILD-5020",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Pipeline fails at checkout stage due to Git credential expiry\nComponent: PowerStore-Core\nError: fatal: Authentication failed for 'https://gitlab.dell.com/powerstore-tests.git'. Git exit code 128. Credential ID: CREDBGLA0OGS expired.\n--- Extracted log lines ---\nERROR: fatal: Authentication failed for 'https://gitlab.dell.com/powerstore-tests.git'. Git exit code 128. Credential ID: CREDER53SCA3 expired."
+  },
+  {
+    "build_id": "BUILD-5021",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI session drops intermittently on nvme-cluster-dev during heavy I/O\nComponent: iSCSI-Driver\nError: iSCSI: session [SES83X7J1] connection timeout after 60s. Target: iqn.2024-01.com.dell:nvme-cluster-dev. Error: ISCSI_ERR_TCP_CONN_CLOSE\n--- Extracted log lines ---\nERROR: iSCSI: session [SES4VB8DS] connection timeout after 30s. Target: iqn.2024-01.com.dell:nvme-cluster-dev. Error: ISCSI_ERR_TCP_CONN_CLOSE"
+  },
+  {
+    "build_id": "BUILD-5022",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Test report generation fails due to XML parser memory error on fc-matrix-env\nComponent: PowerStore-Core\nError: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUN5UKX91Z3D2.xml (169MB). JVM heap: 2048MB. Report generation aborted.\n--- Extracted log lines ---\nERROR: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUN0MHXZFTLAI.xml (416MB). JVM heap: 512MB. Report generation aborted."
+  },
+  {
+    "build_id": "BUILD-5023",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on vmware-integration-env\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOLVL8YN3OQ returned HTTP 401 Unauthorized. Token expired during long-running test suite. 10 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOLIZDTOAIX returned HTTP 401 Unauthorized. Token expired during long-running test suite. 15 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5024",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "Metro-Volume",
+    "cleaned_text": "Failure summary: Metro Volume replication lag exceeds SLA threshold on metro-cluster-env\nComponent: Metro-Volume\nError: Metro Volume [VOLVT7DJ6VE] RPO threshold exceeded: current lag=156ms, threshold=50ms. Sync state: DEGRADED.\n--- Extracted log lines ---\nERROR: Metro Volume [VOLR3FMSZTV] RPO threshold exceeded: current lag=478ms, threshold=50ms. Sync state: DEGRADED."
+  },
+  {
+    "build_id": "BUILD-5025",
+    "failed_stage": "Unit Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Pytest environment variable misconfiguration causes wrong target on powerstore-lab-02\nComponent: REST-API\nError: POWERSTORE_HOST=10.46.10.47 \u2014 production array targeted. Expected: 10.62.18.234. Env var not reset from previous run. Tests executed against wrong target.\n--- Extracted log lines ---\nERROR: POWERSTORE_HOST=10.191.24.226 \u2014 production array targeted. Expected: 10.245.84.179. Env var not reset from previous run. Tests executed against wrong target."
+  },
+  {
+    "build_id": "BUILD-5026",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: Lab test node vmware-integration-env went offline during nightly regression\nComponent: HealthMonitor\nError: Connection refused: ssh vmware-integration-env:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 00:26:36.\n--- Extracted log lines ---\nERROR: Connection refused: ssh vmware-integration-env:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 04:31:56."
+  },
+  {
+    "build_id": "BUILD-5027",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Pipeline fails at checkout stage due to Git credential expiry\nComponent: PowerStore-Core\nError: fatal: Authentication failed for 'https://gitlab.dell.com/powerstore-tests.git'. Git exit code 128. Credential ID: CREDISS1YOHG expired.\n--- Extracted log lines ---\nERROR: fatal: Authentication failed for 'https://gitlab.dell.com/iscsi-regression.git'. Git exit code 128. Credential ID: CRED4Z6ZNNMU expired."
+  },
+  {
+    "build_id": "BUILD-5028",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on k8s-san-lab\nComponent: FC-HBA\nError: FC fabric: host WWPN 4f:05:29:0b:ec:c2:ca:f8 not found in active zone set. Zone ZONE_K8S_SAN_LAB_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN ca:af:b5:a7:3b:ec:38:75 not found in active zone set. Zone ZONE_K8S_SAN_LAB_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5029",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "Kubernetes-CSI",
+    "cleaned_text": "Failure summary: Kubernetes CSI driver fails to mount volume after node restart on k8s-san-lab\nComponent: Kubernetes-CSI\nError: CSI NodePublishVolume failed: volume_id=VOL6J281XM0, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-08.\n--- Extracted log lines ---\nERROR: CSI NodePublishVolume failed: volume_id=VOLA26JA50U, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-01."
+  },
+  {
+    "build_id": "BUILD-5030",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Pytest environment variable misconfiguration causes wrong target on fc-matrix-env\nComponent: REST-API\nError: POWERSTORE_HOST=10.236.62.95 \u2014 production array targeted. Expected: 10.72.118.67. Env var not reset from previous run. Tests executed against wrong target.\n--- Extracted log lines ---\nERROR: POWERSTORE_HOST=10.82.40.200 \u2014 production array targeted. Expected: 10.193.98.98. Env var not reset from previous run. Tests executed against wrong target."
+  },
+  {
+    "build_id": "BUILD-5031",
+    "failed_stage": "Unit Tests",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on fc-matrix-env\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5032",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "SnapEngine",
+    "cleaned_text": "Failure summary: Snapshot creation fails with ENOSPC on StoragePool POOLQ03G4G\nComponent: SnapEngine\nError: Snapshot create failed: pool_id=POOLA7JOX8, error=ENOSPC (28), available_blocks=342347, metadata_reserved=51845. Space accounting mismatch detected.\n--- Extracted log lines ---\nERROR: Snapshot create failed: pool_id=POOLT4NTYF, error=ENOSPC (28), available_blocks=994276, metadata_reserved=63072. Space accounting mismatch detected."
+  },
+  {
+    "build_id": "BUILD-5033",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on powerstore-lab-01\nComponent: HealthMonitor\nError: getaddrinfo: powerstore-lab-01.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.9.7.8 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: powerstore-lab-01.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.5.8.6 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5034",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC HBA path failover takes 132s instead of expected 30s\nComponent: FC-HBA\nError: FC path failover: primary path bb:2c:2d:32:26:1a:45:14 lost. Failover to 0e:50:2c:1a:2b:e7:bf:61 completed in 132s. SCSI error recovery: UA 0x29/0x00.\n--- Extracted log lines ---\nERROR: FC path failover: primary path 12:db:e2:60:55:7f:e5:06 lost. Failover to 92:f6:2f:61:b4:94:17:13 completed in 160s. SCSI error recovery: UA 0x29/0x00."
+  },
+  {
+    "build_id": "BUILD-5035",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on san-testbed-qa-03\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 15/24. Upgrade halted at 66%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 17/24. Upgrade halted at 46%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5036",
+    "failed_stage": "Sanity Check",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on nvme-cluster-dev\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:nvme-cluster-dev:target01 not discoverable. Discovery portal 192.168.96.65:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:nvme-cluster-dev:target01 not discoverable. Discovery portal 192.168.224.1:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5037",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI session drops intermittently on vmware-integration-env during heavy I/O\nComponent: iSCSI-Driver\nError: iSCSI: session [SESMJ631I] connection timeout after 120s. Target: iqn.2024-01.com.dell:vmware-integration-env. Error: ISCSI_ERR_TCP_CONN_CLOSE\n--- Extracted log lines ---\nERROR: iSCSI: session [SES87QXD0] connection timeout after 60s. Target: iqn.2024-01.com.dell:vmware-integration-env. Error: ISCSI_ERR_TCP_CONN_CLOSE"
+  },
+  {
+    "build_id": "BUILD-5038",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI session drops intermittently on powerstore-lab-02 during heavy I/O\nComponent: iSCSI-Driver\nError: iSCSI: session [SESB1NFMD] connection timeout after 120s. Target: iqn.2024-01.com.dell:powerstore-lab-02. Error: ISCSI_ERR_TCP_CONN_CLOSE\n--- Extracted log lines ---\nERROR: iSCSI: session [SES3VVLDX] connection timeout after 120s. Target: iqn.2024-01.com.dell:powerstore-lab-02. Error: ISCSI_ERR_TCP_CONN_CLOSE"
+  },
+  {
+    "build_id": "BUILD-5039",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "VASA-Provider",
+    "cleaned_text": "Failure summary: VASA provider loses connection to vCenter after 48h uptime\nComponent: VASA-Provider\nError: VASA: session to vCenter 10.246.191.95 expired. SSL certificate renewal failed. Last successful heartbeat: 24h ago. Error: SSL_HANDSHAKE_TIMEOUT.\n--- Extracted log lines ---\nERROR: VASA: session to vCenter 10.122.86.93 expired. SSL certificate renewal failed. Last successful heartbeat: 24h ago. Error: SSL_HANDSHAKE_TIMEOUT."
+  },
+  {
+    "build_id": "BUILD-5040",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "NVMe-oF",
+    "cleaned_text": "Failure summary: NVMe-oF discovery failure after controller reset on san-testbed-qa-03\nComponent: NVMe-oF\nError: NVMe discovery log fetch failed: status 0xAF8. Controller B not responding. Retry limit 5 exceeded.\n--- Extracted log lines ---\nERROR: NVMe discovery log fetch failed: status 0x516. Controller B not responding. Retry limit 5 exceeded."
+  },
+  {
+    "build_id": "BUILD-5041",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: NFS share permissions reset causes test data loss on powerstore-lab-01\nComponent: StoragePool\nError: Permission denied: /mnt/test-artifacts/RUNXYNIJ2V0BV/results.xml. NFS share mounted read-only. Error: EROFS (30). CI artifact upload failed.\n--- Extracted log lines ---\nERROR: Permission denied: /mnt/test-artifacts/RUNN7784FIM6T/results.xml. NFS share mounted read-only. Error: EROFS (30). CI artifact upload failed."
+  },
+  {
+    "build_id": "BUILD-5042",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on powerstore-lab-02\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 14/24. Upgrade halted at 52%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 11/24. Upgrade halted at 62%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5043",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on nvme-cluster-dev\nComponent: HealthMonitor\nError: getaddrinfo: nvme-cluster-dev.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.7.4.4 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: nvme-cluster-dev.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.9.1.3 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5044",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on iscsi-regression-lab\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOL3D2GLSOS returned HTTP 401 Unauthorized. Token expired during long-running test suite. 8 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOLOJN5SUJV returned HTTP 401 Unauthorized. Token expired during long-running test suite. 11 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5045",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on fc-matrix-env\nComponent: FC-HBA\nError: FC fabric: host WWPN 8b:2f:c6:ad:e9:27:f6:fd not found in active zone set. Zone ZONE_FC_MATRIX_ENV_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN be:4d:49:ba:2f:c9:4e:7e not found in active zone set. Zone ZONE_FC_MATRIX_ENV_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5046",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on replication-testbed\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOLLAZYC0KY returned HTTP 401 Unauthorized. Token expired during long-running test suite. 18 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOL4TU160GC returned HTTP 401 Unauthorized. Token expired during long-running test suite. 12 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5047",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on fc-matrix-env\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:fc-matrix-env:target01 not discoverable. Discovery portal 192.168.22.194:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:fc-matrix-env:target01 not discoverable. Discovery portal 192.168.190.197:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5048",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on iscsi-regression-lab\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:iscsi-regression-lab:target01 not discoverable. Discovery portal 192.168.193.125:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:iscsi-regression-lab:target01 not discoverable. Discovery portal 192.168.170.100:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5049",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: Lab test node powerstore-lab-02 went offline during nightly regression\nComponent: HealthMonitor\nError: Connection refused: ssh powerstore-lab-02:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 01:30:42.\n--- Extracted log lines ---\nERROR: Connection refused: ssh powerstore-lab-02:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 08:45:16."
+  },
+  {
+    "build_id": "BUILD-5050",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "Kubernetes-CSI",
+    "cleaned_text": "Failure summary: Kubernetes CSI driver fails to mount volume after node restart on powerstore-lab-01\nComponent: Kubernetes-CSI\nError: CSI NodePublishVolume failed: volume_id=VOLC3RRYNBF, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-06.\n--- Extracted log lines ---\nERROR: CSI NodePublishVolume failed: volume_id=VOLZ6R1M9ZI, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-01."
+  },
+  {
+    "build_id": "BUILD-5051",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "SnapEngine",
+    "cleaned_text": "Failure summary: Snapshot creation fails with ENOSPC on StoragePool POOL6RIBNY\nComponent: SnapEngine\nError: Snapshot create failed: pool_id=POOLY72E60, error=ENOSPC (28), available_blocks=549785, metadata_reserved=93093. Space accounting mismatch detected.\n--- Extracted log lines ---\nERROR: Snapshot create failed: pool_id=POOLB67474, error=ENOSPC (28), available_blocks=371745, metadata_reserved=30965. Space accounting mismatch detected."
+  },
+  {
+    "build_id": "BUILD-5052",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "VASA-Provider",
+    "cleaned_text": "Failure summary: VASA provider loses connection to vCenter after 12h uptime\nComponent: VASA-Provider\nError: VASA: session to vCenter 10.195.178.83 expired. SSL certificate renewal failed. Last successful heartbeat: 24h ago. Error: SSL_HANDSHAKE_TIMEOUT.\n--- Extracted log lines ---\nERROR: VASA: session to vCenter 10.105.95.35 expired. SSL certificate renewal failed. Last successful heartbeat: 12h ago. Error: SSL_HANDSHAKE_TIMEOUT."
+  },
+  {
+    "build_id": "BUILD-5053",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI session drops intermittently on fc-matrix-env during heavy I/O\nComponent: iSCSI-Driver\nError: iSCSI: session [SES9BNV2S] connection timeout after 60s. Target: iqn.2024-01.com.dell:fc-matrix-env. Error: ISCSI_ERR_TCP_CONN_CLOSE\n--- Extracted log lines ---\nERROR: iSCSI: session [SESD0MAC7] connection timeout after 30s. Target: iqn.2024-01.com.dell:fc-matrix-env. Error: ISCSI_ERR_TCP_CONN_CLOSE"
+  },
+  {
+    "build_id": "BUILD-5054",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOL7DZII6TU/clone. Backend: DB_LOCK_TIMEOUT after 30ms on table vol_metadata. Transaction ID: TXN36L8RXYR6T.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLQEC8O270/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXN8GXD0D3ACK."
+  },
+  {
+    "build_id": "BUILD-5055",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "VolumeManager",
+    "cleaned_text": "Failure summary: Test framework assertion error due to timing race condition\nComponent: VolumeManager\nError: AssertionError: volume VOLJ0SGRCPW mount state expected MOUNTED, got MOUNTING. Wait timeout: 30s exceeded. Test: clone_scale.\n--- Extracted log lines ---\nERROR: AssertionError: volume VOLWRAC7EN9 mount state expected MOUNTED, got MOUNTING. Wait timeout: 45s exceeded. Test: io_stress."
+  },
+  {
+    "build_id": "BUILD-5056",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLXJ1SGL6P/clone. Backend: DB_LOCK_TIMEOUT after 45ms on table vol_metadata. Transaction ID: TXNU7ILNBH3XP.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLWVE32RYM/clone. Backend: DB_LOCK_TIMEOUT after 45ms on table vol_metadata. Transaction ID: TXNV5GPWBSJJX."
+  },
+  {
+    "build_id": "BUILD-5057",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: Network switch port flapping causes intermittent test failures on metro-cluster-env\nComponent: FC-HBA\nError: Interface eth4 link down/up cycle detected. Duration: 129ms. Caused 18% packet loss. Test timeout threshold exceeded.\n--- Extracted log lines ---\nERROR: Interface eth7 link down/up cycle detected. Duration: 130ms. Caused 9% packet loss. Test timeout threshold exceeded."
+  },
+  {
+    "build_id": "BUILD-5058",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on replication-testbed\nComponent: FC-HBA\nError: FC fabric: host WWPN 2f:d6:4d:5e:46:99:e3:be not found in active zone set. Zone ZONE_REPLICATION_TESTBED_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN 48:0b:16:07:d4:15:20:a8 not found in active zone set. Zone ZONE_REPLICATION_TESTBED_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5059",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: SSL certificate expired on test management node iscsi-regression-lab\nComponent: REST-API\nError: SSL_ERROR_EXPIRED_CERT_ALERT: certificate for iscsi-regression-lab.lab.dell.com expired 7 days ago. All HTTPS connections rejected. Tests: FAILED.\n--- Extracted log lines ---\nERROR: SSL_ERROR_EXPIRED_CERT_ALERT: certificate for iscsi-regression-lab.lab.dell.com expired 9 days ago. All HTTPS connections rejected. Tests: FAILED."
+  },
+  {
+    "build_id": "BUILD-5060",
+    "failed_stage": "Unit Tests",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLO0I5NR2J/clone. Backend: DB_LOCK_TIMEOUT after 45ms on table vol_metadata. Transaction ID: TXNW4AG7FVMJD.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOL9LK9EG6G/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXN0WH3SKGPJQ."
+  },
+  {
+    "build_id": "BUILD-5061",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC HBA path failover takes 164s instead of expected 30s\nComponent: FC-HBA\nError: FC path failover: primary path 55:2b:a0:1d:ef:60:fc:7b lost. Failover to e6:43:17:62:00:15:3b:84 completed in 137s. SCSI error recovery: UA 0x29/0x00.\n--- Extracted log lines ---\nERROR: FC path failover: primary path b8:3e:89:b7:e1:d7:33:00 lost. Failover to 07:2d:5d:59:ca:ec:73:f7 completed in 105s. SCSI error recovery: UA 0x29/0x00."
+  },
+  {
+    "build_id": "BUILD-5062",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on fc-matrix-env\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 17/24. Upgrade halted at 32%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 19/24. Upgrade halted at 69%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5063",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Docker container OOM kill during stress test on fc-matrix-env\nComponent: PowerStore-Core\nError: OOM killer invoked: container=ctriwfcckvofn0p, mem_limit=2048MB, peak_usage=3140MB. Process killed: stress-ng PID 10063. Exit code: 137.\n--- Extracted log lines ---\nERROR: OOM killer invoked: container=ctr1bbbv6h99w5u, mem_limit=2048MB, peak_usage=3663MB. Process killed: stress-ng PID 57272. Exit code: 137."
+  },
+  {
+    "build_id": "BUILD-5064",
+    "failed_stage": "Sanity Check",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Robot Framework library version conflict breaks CSI_Integration suite\nComponent: REST-API\nError: ImportError: cannot import name 'Session' from 'requests' (version 2.28.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.\n--- Extracted log lines ---\nERROR: ImportError: cannot import name 'Session' from 'requests' (version 2.27.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt."
+  },
+  {
+    "build_id": "BUILD-5065",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on powerstore-lab-01\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:powerstore-lab-01:target01 not discoverable. Discovery portal 192.168.84.203:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:powerstore-lab-01:target01 not discoverable. Discovery portal 192.168.189.128:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5066",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on nvme-cluster-dev\nComponent: FC-HBA\nError: FC fabric: host WWPN c5:1e:20:8e:a9:45:07:0e not found in active zone set. Zone ZONE_NVME_CLUSTER_DEV_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN 76:8f:92:39:35:57:e2:b1 not found in active zone set. Zone ZONE_NVME_CLUSTER_DEV_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5067",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on powerstore-lab-01\nComponent: HealthMonitor\nError: getaddrinfo: powerstore-lab-01.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.4.1.1 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: powerstore-lab-01.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.3.7.8 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5068",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on powerstore-lab-02\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5069",
+    "failed_stage": "Sanity Check",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: NFS share permissions reset causes test data loss on fc-matrix-env\nComponent: StoragePool\nError: Permission denied: /mnt/test-artifacts/RUNK87AOUONPL/results.xml. NFS share mounted read-only. Error: EROFS (30). CI artifact upload failed.\n--- Extracted log lines ---\nERROR: Permission denied: /mnt/test-artifacts/RUN4NUKC660FJ/results.xml. NFS share mounted read-only. Error: EROFS (30). CI artifact upload failed."
+  },
+  {
+    "build_id": "BUILD-5070",
+    "failed_stage": "Unit Tests",
+    "failure_category": "product",
+    "failure_component": "Kubernetes-CSI",
+    "cleaned_text": "Failure summary: Kubernetes CSI driver fails to mount volume after node restart on san-testbed-qa-03\nComponent: Kubernetes-CSI\nError: CSI NodePublishVolume failed: volume_id=VOLVSYBL9AO, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-09.\n--- Extracted log lines ---\nERROR: CSI NodePublishVolume failed: volume_id=VOLS33PAMCI, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-09."
+  },
+  {
+    "build_id": "BUILD-5071",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on k8s-san-lab\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOLMTFUIZAE returned HTTP 401 Unauthorized. Token expired during long-running test suite. 15 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOLHEZ73DZK returned HTTP 401 Unauthorized. Token expired during long-running test suite. 17 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5072",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on powerstore-lab-01 reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOL859C47, usage=99%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOL17TSX6, usage=96%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5073",
+    "failed_stage": "Unit Tests",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Test report generation fails due to XML parser memory error on k8s-san-lab\nComponent: PowerStore-Core\nError: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNBN73Q8AHA6.xml (54MB). JVM heap: 512MB. Report generation aborted.\n--- Extracted log lines ---\nERROR: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNHK4ZY0A61D.xml (268MB). JVM heap: 2048MB. Report generation aborted."
+  },
+  {
+    "build_id": "BUILD-5074",
+    "failed_stage": "Sanity Check",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Jenkins pipeline YAML syntax error breaks feature/nvme-support branch builds\nComponent: PowerStore-Core\nError: WorkflowScript: 119: unable to resolve class PowerStoreClient. YAML parse error at line 119: expected block end, found block mapping. Commit: r2rry5l.\n--- Extracted log lines ---\nERROR: WorkflowScript: 10: unable to resolve class PowerStoreClient. YAML parse error at line 10: expected block end, found block mapping. Commit: jertpu7."
+  },
+  {
+    "build_id": "BUILD-5075",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: SSL certificate expired on test management node iscsi-regression-lab\nComponent: REST-API\nError: SSL_ERROR_EXPIRED_CERT_ALERT: certificate for iscsi-regression-lab.lab.dell.com expired 11 days ago. All HTTPS connections rejected. Tests: FAILED.\n--- Extracted log lines ---\nERROR: SSL_ERROR_EXPIRED_CERT_ALERT: certificate for iscsi-regression-lab.lab.dell.com expired 14 days ago. All HTTPS connections rejected. Tests: FAILED."
+  },
+  {
+    "build_id": "BUILD-5076",
+    "failed_stage": "Unit Tests",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLBSRD6KB0/clone. Backend: DB_LOCK_TIMEOUT after 60ms on table vol_metadata. Transaction ID: TXNVBPW085FBY.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOL34G3D697/clone. Backend: DB_LOCK_TIMEOUT after 60ms on table vol_metadata. Transaction ID: TXN5KX5GV3P2Q."
+  },
+  {
+    "build_id": "BUILD-5077",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: Lab test node k8s-san-lab went offline during nightly regression\nComponent: HealthMonitor\nError: Connection refused: ssh k8s-san-lab:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 09:10:39.\n--- Extracted log lines ---\nERROR: Connection refused: ssh k8s-san-lab:22. Timeout after 30s. IPMI status: chassis power on. OS health: UNKNOWN. Last ping: 21:29:25."
+  },
+  {
+    "build_id": "BUILD-5078",
+    "failed_stage": "Unit Tests",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLG5O5BBD2/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXNLC2J08LTNQ.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOL5VWL8QTQ/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXN1C90ZOTKGM."
+  },
+  {
+    "build_id": "BUILD-5079",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Docker container OOM kill during stress test on metro-cluster-env\nComponent: PowerStore-Core\nError: OOM killer invoked: container=ctrf17pvfdid8v4, mem_limit=1024MB, peak_usage=3715MB. Process killed: stress-ng PID 13070. Exit code: 137.\n--- Extracted log lines ---\nERROR: OOM killer invoked: container=ctrqvahr67gxsfm, mem_limit=2048MB, peak_usage=2315MB. Process killed: stress-ng PID 24183. Exit code: 137."
+  },
+  {
+    "build_id": "BUILD-5080",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "NVMe-oF",
+    "cleaned_text": "Failure summary: NVMe-oF discovery failure after controller reset on iscsi-regression-lab\nComponent: NVMe-oF\nError: NVMe discovery log fetch failed: status 0xA45. Controller A not responding. Retry limit 10 exceeded.\n--- Extracted log lines ---\nERROR: NVMe discovery log fetch failed: status 0xC67. Controller A not responding. Retry limit 5 exceeded."
+  },
+  {
+    "build_id": "BUILD-5081",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Docker container OOM kill during stress test on k8s-san-lab\nComponent: PowerStore-Core\nError: OOM killer invoked: container=ctrxvvs7yieyn0k, mem_limit=512MB, peak_usage=2296MB. Process killed: stress-ng PID 23542. Exit code: 137.\n--- Extracted log lines ---\nERROR: OOM killer invoked: container=ctr0f3600qvbo1n, mem_limit=2048MB, peak_usage=3981MB. Process killed: stress-ng PID 17936. Exit code: 137."
+  },
+  {
+    "build_id": "BUILD-5082",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "Kubernetes-CSI",
+    "cleaned_text": "Failure summary: Kubernetes CSI driver fails to mount volume after node restart on nvme-cluster-dev\nComponent: Kubernetes-CSI\nError: CSI NodePublishVolume failed: volume_id=VOLP1Y5LRGZ, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-01.\n--- Extracted log lines ---\nERROR: CSI NodePublishVolume failed: volume_id=VOLZ3F0UTFJ, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-04."
+  },
+  {
+    "build_id": "BUILD-5083",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Docker container OOM kill during stress test on powerstore-lab-01\nComponent: PowerStore-Core\nError: OOM killer invoked: container=ctrnb498sb2vctk, mem_limit=1024MB, peak_usage=2492MB. Process killed: stress-ng PID 39642. Exit code: 137.\n--- Extracted log lines ---\nERROR: OOM killer invoked: container=ctrvne0ah1xjszx, mem_limit=1024MB, peak_usage=3417MB. Process killed: stress-ng PID 13538. Exit code: 137."
+  },
+  {
+    "build_id": "BUILD-5084",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on replication-testbed\nComponent: FC-HBA\nError: FC fabric: host WWPN 7d:a9:32:76:97:01:6f:c0 not found in active zone set. Zone ZONE_REPLICATION_TESTBED_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN 57:df:39:6e:92:5a:de:57 not found in active zone set. Zone ZONE_REPLICATION_TESTBED_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5085",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "Data-Reduction",
+    "cleaned_text": "Failure summary: Data Reduction ratio drops to 1.0x unexpectedly on san-testbed-qa-03\nComponent: Data-Reduction\nError: DataReduction engine: dedup disabled for encrypted volumes. Policy conflict: ENCRYPT=AES256 | DEDUP=ENABLED \u2014 incompatible combination. Pool: POOL7VXAXN.\n--- Extracted log lines ---\nERROR: DataReduction engine: dedup disabled for encrypted volumes. Policy conflict: ENCRYPT=AES256 | DEDUP=ENABLED \u2014 incompatible combination. Pool: POOLQS3XME."
+  },
+  {
+    "build_id": "BUILD-5086",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "SnapEngine",
+    "cleaned_text": "Failure summary: Snapshot creation fails with ENOSPC on StoragePool POOLC4MW6V\nComponent: SnapEngine\nError: Snapshot create failed: pool_id=POOLGYGB0L, error=ENOSPC (28), available_blocks=538287, metadata_reserved=39415. Space accounting mismatch detected.\n--- Extracted log lines ---\nERROR: Snapshot create failed: pool_id=POOLYIJ7KG, error=ENOSPC (28), available_blocks=918806, metadata_reserved=69597. Space accounting mismatch detected."
+  },
+  {
+    "build_id": "BUILD-5087",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on metro-cluster-env\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5088",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLU66QKT51/clone. Backend: DB_LOCK_TIMEOUT after 60ms on table vol_metadata. Transaction ID: TXNRIEW8PLHUO.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLYVSVRV4P/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXNE2V3YXJUNZ."
+  },
+  {
+    "build_id": "BUILD-5089",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on k8s-san-lab\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5090",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "Data-Reduction",
+    "cleaned_text": "Failure summary: Data Reduction ratio drops to 1.0x unexpectedly on powerstore-lab-02\nComponent: Data-Reduction\nError: DataReduction engine: dedup disabled for encrypted volumes. Policy conflict: ENCRYPT=AES256 | DEDUP=ENABLED \u2014 incompatible combination. Pool: POOLZ5L5WZ.\n--- Extracted log lines ---\nERROR: DataReduction engine: dedup disabled for encrypted volumes. Policy conflict: ENCRYPT=AES256 | DEDUP=ENABLED \u2014 incompatible combination. Pool: POOL9RKLVZ."
+  },
+  {
+    "build_id": "BUILD-5091",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: Network switch port flapping causes intermittent test failures on powerstore-lab-02\nComponent: FC-HBA\nError: Interface eth3 link down/up cycle detected. Duration: 280ms. Caused 27% packet loss. Test timeout threshold exceeded.\n--- Extracted log lines ---\nERROR: Interface eth0 link down/up cycle detected. Duration: 133ms. Caused 25% packet loss. Test timeout threshold exceeded."
+  },
+  {
+    "build_id": "BUILD-5092",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "NVMe-oF",
+    "cleaned_text": "Failure summary: NVMe-oF discovery failure after controller reset on fc-matrix-env\nComponent: NVMe-oF\nError: NVMe discovery log fetch failed: status 0xEA4. Controller A not responding. Retry limit 3 exceeded.\n--- Extracted log lines ---\nERROR: NVMe discovery log fetch failed: status 0x94A. Controller A not responding. Retry limit 3 exceeded."
+  },
+  {
+    "build_id": "BUILD-5093",
+    "failed_stage": "Sanity Check",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on replication-testbed\nComponent: HealthMonitor\nError: getaddrinfo: replication-testbed.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.4.8.1 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: replication-testbed.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.6.8.6 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5094",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "Metro-Volume",
+    "cleaned_text": "Failure summary: Metro Volume replication lag exceeds SLA threshold on nvme-cluster-dev\nComponent: Metro-Volume\nError: Metro Volume [VOLJOT1J7LT] RPO threshold exceeded: current lag=370ms, threshold=50ms. Sync state: DEGRADED.\n--- Extracted log lines ---\nERROR: Metro Volume [VOLCM3EJ10M] RPO threshold exceeded: current lag=304ms, threshold=50ms. Sync state: DEGRADED."
+  },
+  {
+    "build_id": "BUILD-5095",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "Performance-Monitor",
+    "cleaned_text": "Failure summary: Performance benchmark script uses wrong baseline on vmware-integration-env\nComponent: Performance-Monitor\nError: Performance regression detected: IOPS=161768, baseline=218421, delta=24%. WARNING: Baseline file model=PowerStore3200T, test model=PowerStore500T MISMATCH.\n--- Extracted log lines ---\nERROR: Performance regression detected: IOPS=198432, baseline=222500, delta=19%. WARNING: Baseline file model=PowerStore3200T, test model=PowerStore500T MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5096",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Robot Framework library version conflict breaks SAN_Regression suite\nComponent: REST-API\nError: ImportError: cannot import name 'Session' from 'requests' (version 2.28.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.\n--- Extracted log lines ---\nERROR: ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt."
+  },
+  {
+    "build_id": "BUILD-5097",
+    "failed_stage": "Sanity Check",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on powerstore-lab-02\nComponent: FC-HBA\nError: FC fabric: host WWPN 37:d9:c3:17:5f:57:93:c6 not found in active zone set. Zone ZONE_POWERSTORE_LAB_02_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN d2:c3:35:10:d0:68:56:22 not found in active zone set. Zone ZONE_POWERSTORE_LAB_02_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5098",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on fc-matrix-env\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 13/24. Upgrade halted at 75%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 9/24. Upgrade halted at 49%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5099",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on powerstore-lab-02\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5100",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on vmware-integration-env\nComponent: HealthMonitor\nError: getaddrinfo: vmware-integration-env.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.4.6.2 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: vmware-integration-env.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.3.4.2 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5101",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on vmware-integration-env\nComponent: HealthMonitor\nError: getaddrinfo: vmware-integration-env.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.1.5.4 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: vmware-integration-env.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.2.6.1 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5102",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Robot Framework library version conflict breaks CSI_Integration suite\nComponent: REST-API\nError: ImportError: cannot import name 'Session' from 'requests' (version 2.28.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt.\n--- Extracted log lines ---\nERROR: ImportError: cannot import name 'Session' from 'requests' (version 2.26.0). RequestsLibrary requires requests>=2.29.0. Conflict in requirements.txt."
+  },
+  {
+    "build_id": "BUILD-5103",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: REST API returns 500 error on volume clone operation\nComponent: REST-API\nError: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLDYJIOAQB/clone. Backend: DB_LOCK_TIMEOUT after 60ms on table vol_metadata. Transaction ID: TXN53WDM3BLM5.\n--- Extracted log lines ---\nERROR: HTTP 500 Internal Server Error. Request: POST /api/rest/v1/volume/VOLAXOQONOU/clone. Backend: DB_LOCK_TIMEOUT after 120ms on table vol_metadata. Transaction ID: TXNKDEB6LIXN6."
+  },
+  {
+    "build_id": "BUILD-5104",
+    "failed_stage": "Sanity Check",
+    "failure_category": "automation",
+    "failure_component": "Performance-Monitor",
+    "cleaned_text": "Failure summary: Performance benchmark script uses wrong baseline on replication-testbed\nComponent: Performance-Monitor\nError: Performance regression detected: IOPS=138484, baseline=237267, delta=21%. WARNING: Baseline file model=PowerStore1000T, test model=PowerStore9000X MISMATCH.\n--- Extracted log lines ---\nERROR: Performance regression detected: IOPS=89327, baseline=195556, delta=14%. WARNING: Baseline file model=PowerStore3200T, test model=PowerStore500T MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5105",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on powerstore-lab-02\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5106",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on san-testbed-qa-03\nComponent: HealthMonitor\nError: getaddrinfo: san-testbed-qa-03.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.2.6.8 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: san-testbed-qa-03.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.5.7.3 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5107",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "Kubernetes-CSI",
+    "cleaned_text": "Failure summary: Kubernetes CSI driver fails to mount volume after node restart on nvme-cluster-dev\nComponent: Kubernetes-CSI\nError: CSI NodePublishVolume failed: volume_id=VOLP61L3BSB, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-05.\n--- Extracted log lines ---\nERROR: CSI NodePublishVolume failed: volume_id=VOLXIH64A60, error=VolumeNotFound. iSCSI session not re-established after node reboot. Node: worker-05."
+  },
+  {
+    "build_id": "BUILD-5108",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "VASA-Provider",
+    "cleaned_text": "Failure summary: VASA provider loses connection to vCenter after 6h uptime\nComponent: VASA-Provider\nError: VASA: session to vCenter 10.200.1.169 expired. SSL certificate renewal failed. Last successful heartbeat: 48h ago. Error: SSL_HANDSHAKE_TIMEOUT.\n--- Extracted log lines ---\nERROR: VASA: session to vCenter 10.92.247.105 expired. SSL certificate renewal failed. Last successful heartbeat: 48h ago. Error: SSL_HANDSHAKE_TIMEOUT."
+  },
+  {
+    "build_id": "BUILD-5109",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Pytest environment variable misconfiguration causes wrong target on metro-cluster-env\nComponent: REST-API\nError: POWERSTORE_HOST=10.247.133.5 \u2014 production array targeted. Expected: 10.151.210.76. Env var not reset from previous run. Tests executed against wrong target.\n--- Extracted log lines ---\nERROR: POWERSTORE_HOST=10.34.139.35 \u2014 production array targeted. Expected: 10.186.37.118. Env var not reset from previous run. Tests executed against wrong target."
+  },
+  {
+    "build_id": "BUILD-5110",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC HBA path failover takes 142s instead of expected 30s\nComponent: FC-HBA\nError: FC path failover: primary path 9e:2f:d7:97:a4:74:dd:c4 lost. Failover to 4d:75:be:21:9f:ac:98:d7 completed in 130s. SCSI error recovery: UA 0x29/0x00.\n--- Extracted log lines ---\nERROR: FC path failover: primary path b1:8c:93:b4:91:c2:d2:dd lost. Failover to b4:5e:4c:1a:ef:fd:7f:74 completed in 48s. SCSI error recovery: UA 0x29/0x00."
+  },
+  {
+    "build_id": "BUILD-5111",
+    "failed_stage": "Integration Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "FaultManager",
+    "cleaned_text": "Failure summary: PowerStore array firmware upgrade causes unexpected reboot on metro-cluster-env\nComponent: FaultManager\nError: Firmware upgrade interrupted: node_B reboot detected at step 9/24. Upgrade halted at 39%. Array state: MAINTENANCE_MODE. Recovery required.\n--- Extracted log lines ---\nERROR: Firmware upgrade interrupted: node_B reboot detected at step 12/24. Upgrade halted at 75%. Array state: MAINTENANCE_MODE. Recovery required."
+  },
+  {
+    "build_id": "BUILD-5112",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Test report generation fails due to XML parser memory error on replication-testbed\nComponent: PowerStore-Core\nError: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUN0FTA7P63XF.xml (92MB). JVM heap: 512MB. Report generation aborted.\n--- Extracted log lines ---\nERROR: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUN6T1L9AY2D6.xml (387MB). JVM heap: 2048MB. Report generation aborted."
+  },
+  {
+    "build_id": "BUILD-5113",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on san-testbed-qa-03\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5114",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Pytest environment variable misconfiguration causes wrong target on vmware-integration-env\nComponent: REST-API\nError: POWERSTORE_HOST=10.135.77.118 \u2014 production array targeted. Expected: 10.2.235.62. Env var not reset from previous run. Tests executed against wrong target.\n--- Extracted log lines ---\nERROR: POWERSTORE_HOST=10.241.236.185 \u2014 production array targeted. Expected: 10.6.140.115. Env var not reset from previous run. Tests executed against wrong target."
+  },
+  {
+    "build_id": "BUILD-5115",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on fc-matrix-env reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOLYINNLO, usage=97%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOLHS5PEC, usage=97%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5116",
+    "failed_stage": "Sanity Check",
+    "failure_category": "automation",
+    "failure_component": "Performance-Monitor",
+    "cleaned_text": "Failure summary: Performance benchmark script uses wrong baseline on replication-testbed\nComponent: Performance-Monitor\nError: Performance regression detected: IOPS=67632, baseline=88140, delta=26%. WARNING: Baseline file model=PowerStore1000T, test model=PowerStore500T MISMATCH.\n--- Extracted log lines ---\nERROR: Performance regression detected: IOPS=77550, baseline=225117, delta=20%. WARNING: Baseline file model=PowerStore3200T, test model=PowerStore500T MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5117",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on replication-testbed\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:replication-testbed:target01 not discoverable. Discovery portal 192.168.85.139:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:replication-testbed:target01 not discoverable. Discovery portal 192.168.139.19:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5118",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Test report generation fails due to XML parser memory error on powerstore-lab-01\nComponent: PowerStore-Core\nError: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNF8EE5HW0LZ.xml (254MB). JVM heap: 2048MB. Report generation aborted.\n--- Extracted log lines ---\nERROR: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNYIALEQWE40.xml (442MB). JVM heap: 2048MB. Report generation aborted."
+  },
+  {
+    "build_id": "BUILD-5119",
+    "failed_stage": "Cleanup",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on replication-testbed\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:replication-testbed:target01 not discoverable. Discovery portal 192.168.110.15:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:replication-testbed:target01 not discoverable. Discovery portal 192.168.188.18:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5120",
+    "failed_stage": "Performance Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on nvme-cluster-dev reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOLKBKKLN, usage=97%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOL97M0LX, usage=98%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5121",
+    "failed_stage": "Integration Tests",
+    "failure_category": "product",
+    "failure_component": "NVMe-oF",
+    "cleaned_text": "Failure summary: NVMe-oF discovery failure after controller reset on vmware-integration-env\nComponent: NVMe-oF\nError: NVMe discovery log fetch failed: status 0x24F. Controller A not responding. Retry limit 3 exceeded.\n--- Extracted log lines ---\nERROR: NVMe discovery log fetch failed: status 0x482. Controller B not responding. Retry limit 3 exceeded."
+  },
+  {
+    "build_id": "BUILD-5122",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Test data cleanup script fails leaving orphaned volumes on san-testbed-qa-03\nComponent: REST-API\nError: Cleanup failed: DELETE /api/rest/v1/volume/VOL1G8JEWY7 returned HTTP 401 Unauthorized. Token expired during long-running test suite. 6 volumes not deleted.\n--- Extracted log lines ---\nERROR: Cleanup failed: DELETE /api/rest/v1/volume/VOL0FKV5G9X returned HTTP 401 Unauthorized. Token expired during long-running test suite. 15 volumes not deleted."
+  },
+  {
+    "build_id": "BUILD-5123",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "Data-Reduction",
+    "cleaned_text": "Failure summary: Data Reduction ratio drops to 1.0x unexpectedly on powerstore-lab-01\nComponent: Data-Reduction\nError: DataReduction engine: dedup disabled for encrypted volumes. Policy conflict: ENCRYPT=AES256 | DEDUP=ENABLED \u2014 incompatible combination. Pool: POOL1RBZED.\n--- Extracted log lines ---\nERROR: DataReduction engine: dedup disabled for encrypted volumes. Policy conflict: ENCRYPT=AES256 | DEDUP=ENABLED \u2014 incompatible combination. Pool: POOLAS9VBU."
+  },
+  {
+    "build_id": "BUILD-5124",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "VASA-Provider",
+    "cleaned_text": "Failure summary: VASA provider loses connection to vCenter after 12h uptime\nComponent: VASA-Provider\nError: VASA: session to vCenter 10.20.22.41 expired. SSL certificate renewal failed. Last successful heartbeat: 6h ago. Error: SSL_HANDSHAKE_TIMEOUT.\n--- Extracted log lines ---\nERROR: VASA: session to vCenter 10.31.171.254 expired. SSL certificate renewal failed. Last successful heartbeat: 48h ago. Error: SSL_HANDSHAKE_TIMEOUT."
+  },
+  {
+    "build_id": "BUILD-5125",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Test report generation fails due to XML parser memory error on metro-cluster-env\nComponent: PowerStore-Core\nError: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUND4SW5N23FH.xml (159MB). JVM heap: 2048MB. Report generation aborted.\n--- Extracted log lines ---\nERROR: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNYTFQSNFOZR.xml (360MB). JVM heap: 512MB. Report generation aborted."
+  },
+  {
+    "build_id": "BUILD-5126",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "Metro-Volume",
+    "cleaned_text": "Failure summary: Metro Volume replication lag exceeds SLA threshold on k8s-san-lab\nComponent: Metro-Volume\nError: Metro Volume [VOLDVHKRCBA] RPO threshold exceeded: current lag=380ms, threshold=50ms. Sync state: DEGRADED.\n--- Extracted log lines ---\nERROR: Metro Volume [VOLNXS6ARXQ] RPO threshold exceeded: current lag=225ms, threshold=50ms. Sync state: DEGRADED."
+  },
+  {
+    "build_id": "BUILD-5127",
+    "failed_stage": "Performance Tests",
+    "failure_category": "automation",
+    "failure_component": "Performance-Monitor",
+    "cleaned_text": "Failure summary: Performance benchmark script uses wrong baseline on iscsi-regression-lab\nComponent: Performance-Monitor\nError: Performance regression detected: IOPS=123728, baseline=134269, delta=28%. WARNING: Baseline file model=PowerStore3200T, test model=PowerStore500T MISMATCH.\n--- Extracted log lines ---\nERROR: Performance regression detected: IOPS=172192, baseline=154305, delta=26%. WARNING: Baseline file model=PowerStore3200T, test model=PowerStore500T MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5128",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "Metro-Volume",
+    "cleaned_text": "Failure summary: Metro Volume replication lag exceeds SLA threshold on metro-cluster-env\nComponent: Metro-Volume\nError: Metro Volume [VOL7T8BD4DZ] RPO threshold exceeded: current lag=368ms, threshold=50ms. Sync state: DEGRADED.\n--- Extracted log lines ---\nERROR: Metro Volume [VOLRTSNXCKW] RPO threshold exceeded: current lag=208ms, threshold=50ms. Sync state: DEGRADED."
+  },
+  {
+    "build_id": "BUILD-5129",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: SSL certificate expired on test management node vmware-integration-env\nComponent: REST-API\nError: SSL_ERROR_EXPIRED_CERT_ALERT: certificate for vmware-integration-env.lab.dell.com expired 13 days ago. All HTTPS connections rejected. Tests: FAILED.\n--- Extracted log lines ---\nERROR: SSL_ERROR_EXPIRED_CERT_ALERT: certificate for vmware-integration-env.lab.dell.com expired 2 days ago. All HTTPS connections rejected. Tests: FAILED."
+  },
+  {
+    "build_id": "BUILD-5130",
+    "failed_stage": "Unit Tests",
+    "failure_category": "product",
+    "failure_component": "SnapEngine",
+    "cleaned_text": "Failure summary: Snapshot creation fails with ENOSPC on StoragePool POOL6TOH9J\nComponent: SnapEngine\nError: Snapshot create failed: pool_id=POOLG9E0IF, error=ENOSPC (28), available_blocks=998983, metadata_reserved=28121. Space accounting mismatch detected.\n--- Extracted log lines ---\nERROR: Snapshot create failed: pool_id=POOLWAE7YD, error=ENOSPC (28), available_blocks=785621, metadata_reserved=48746. Space accounting mismatch detected."
+  },
+  {
+    "build_id": "BUILD-5131",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Test report generation fails due to XML parser memory error on iscsi-regression-lab\nComponent: PowerStore-Core\nError: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNSNHVT93H5V.xml (249MB). JVM heap: 1024MB. Report generation aborted.\n--- Extracted log lines ---\nERROR: java.lang.OutOfMemoryError: Java heap space. XML parser failed on junit-report-RUNOF7N5OH8H6.xml (273MB). JVM heap: 512MB. Report generation aborted."
+  },
+  {
+    "build_id": "BUILD-5132",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "Metro-Volume",
+    "cleaned_text": "Failure summary: Metro Volume replication lag exceeds SLA threshold on iscsi-regression-lab\nComponent: Metro-Volume\nError: Metro Volume [VOL9FBS95HY] RPO threshold exceeded: current lag=113ms, threshold=50ms. Sync state: DEGRADED.\n--- Extracted log lines ---\nERROR: Metro Volume [VOLXXPEH2N5] RPO threshold exceeded: current lag=167ms, threshold=50ms. Sync state: DEGRADED."
+  },
+  {
+    "build_id": "BUILD-5133",
+    "failed_stage": "Cleanup",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on metro-cluster-env\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5134",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: CI pipeline skips critical tests due to wrong pytest marker filter\nComponent: PowerStore-Core\nError: pytest collected 0 items after marker filter '-m sanity and not integration'. Expected ~155 tests. Tests NOT RUN. Build marked SUCCESS incorrectly.\n--- Extracted log lines ---\nERROR: pytest collected 0 items after marker filter '-m sanity and not integration'. Expected ~163 tests. Tests NOT RUN. Build marked SUCCESS incorrectly."
+  },
+  {
+    "build_id": "BUILD-5135",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "AutoSupport",
+    "cleaned_text": "Failure summary: AutoSupport upload fails with TLS handshake error on san-testbed-qa-03\nComponent: AutoSupport\nError: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+.\n--- Extracted log lines ---\nERROR: AutoSupport upload failed: URL=https://autosupport.dellemc.com/upload, error=SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+."
+  },
+  {
+    "build_id": "BUILD-5136",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Ansible playbook fails with SSH key mismatch on vmware-integration-env\nComponent: PowerStore-Core\nError: UNREACHABLE: vmware-integration-env - SSH Error: Host key verification failed. Known hosts mismatch. Offending key: /home/jenkins/.ssh/known_hosts:178.\n--- Extracted log lines ---\nERROR: UNREACHABLE: vmware-integration-env - SSH Error: Host key verification failed. Known hosts mismatch. Offending key: /home/jenkins/.ssh/known_hosts:61."
+  },
+  {
+    "build_id": "BUILD-5137",
+    "failed_stage": "Report",
+    "failure_category": "product",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC HBA path failover takes 46s instead of expected 30s\nComponent: FC-HBA\nError: FC path failover: primary path 69:c2:28:8a:ff:d8:f9:6e lost. Failover to fb:e1:5d:cb:84:7c:ba:50 completed in 141s. SCSI error recovery: UA 0x29/0x00.\n--- Extracted log lines ---\nERROR: FC path failover: primary path 1c:a0:70:9a:88:86:97:f5 lost. Failover to da:62:be:84:41:02:a4:b4 completed in 151s. SCSI error recovery: UA 0x29/0x00."
+  },
+  {
+    "build_id": "BUILD-5138",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on powerstore-lab-02 reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOL4CBRX5, usage=98%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOLTSM8M5, usage=98%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5139",
+    "failed_stage": "Unit Tests",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: Storage pool on iscsi-regression-lab reaches 95% capacity blocking writes\nComponent: StoragePool\nError: Write failed: pool_id=POOLPECQGP, usage=96%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED.\n--- Extracted log lines ---\nERROR: Write failed: pool_id=POOL1BG1K0, usage=99%, threshold=95%. ENOSPC returned to all write operations. Auto-expand policy: DISABLED."
+  },
+  {
+    "build_id": "BUILD-5140",
+    "failed_stage": "Report",
+    "failure_category": "automation",
+    "failure_component": "REST-API",
+    "cleaned_text": "Failure summary: Pytest environment variable misconfiguration causes wrong target on replication-testbed\nComponent: REST-API\nError: POWERSTORE_HOST=10.100.29.78 \u2014 production array targeted. Expected: 10.181.91.236. Env var not reset from previous run. Tests executed against wrong target.\n--- Extracted log lines ---\nERROR: POWERSTORE_HOST=10.19.84.223 \u2014 production array targeted. Expected: 10.118.202.194. Env var not reset from previous run. Tests executed against wrong target."
+  },
+  {
+    "build_id": "BUILD-5141",
+    "failed_stage": "Sanity Check",
+    "failure_category": "automation",
+    "failure_component": "PowerStore-Core",
+    "cleaned_text": "Failure summary: Jenkins pipeline YAML syntax error breaks develop branch builds\nComponent: PowerStore-Core\nError: WorkflowScript: 40: unable to resolve class VolumeHelper. YAML parse error at line 40: expected block end, found block mapping. Commit: 0z7zt7e.\n--- Extracted log lines ---\nERROR: WorkflowScript: 20: unable to resolve class VolumeHelper. YAML parse error at line 20: expected block end, found block mapping. Commit: k1h95vs."
+  },
+  {
+    "build_id": "BUILD-5142",
+    "failed_stage": "Sanity Check",
+    "failure_category": "infrastructure",
+    "failure_component": "StoragePool",
+    "cleaned_text": "Failure summary: NFS share permissions reset causes test data loss on fc-matrix-env\nComponent: StoragePool\nError: Permission denied: /mnt/test-artifacts/RUN36OM2IM23I/results.xml. NFS share mounted read-only. Error: EROFS (30). CI artifact upload failed.\n--- Extracted log lines ---\nERROR: Permission denied: /mnt/test-artifacts/RUNX5BERQ5UQS/results.xml. NFS share mounted read-only. Error: EROFS (30). CI artifact upload failed."
+  },
+  {
+    "build_id": "BUILD-5143",
+    "failed_stage": "Sanity Check",
+    "failure_category": "infrastructure",
+    "failure_component": "HealthMonitor",
+    "cleaned_text": "Failure summary: DNS resolution failure breaks test connectivity on powerstore-lab-02\nComponent: HealthMonitor\nError: getaddrinfo: powerstore-lab-02.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.5.3.2 not responding. Tests marked FAILED.\n--- Extracted log lines ---\nERROR: getaddrinfo: powerstore-lab-02.lab.dell.com Name or service not known. DNS query timeout after 5s. Nameserver 10.8.3.7 not responding. Tests marked FAILED."
+  },
+  {
+    "build_id": "BUILD-5144",
+    "failed_stage": "Sanity Check",
+    "failure_category": "product",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC HBA path failover takes 64s instead of expected 30s\nComponent: FC-HBA\nError: FC path failover: primary path 4f:ea:43:9e:a3:79:17:8c lost. Failover to bd:8b:eb:a2:86:1c:c9:92 completed in 113s. SCSI error recovery: UA 0x29/0x00.\n--- Extracted log lines ---\nERROR: FC path failover: primary path 15:67:9f:ae:e5:57:cb:e1 lost. Failover to 02:56:e7:9b:97:ed:a2:73 completed in 169s. SCSI error recovery: UA 0x29/0x00."
+  },
+  {
+    "build_id": "BUILD-5145",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "FC-HBA",
+    "cleaned_text": "Failure summary: FC fabric zoning misconfiguration prevents host discovery on iscsi-regression-lab\nComponent: FC-HBA\nError: FC fabric: host WWPN 4c:bd:3c:a3:de:92:2e:a1 not found in active zone set. Zone ZONE_ISCSI_REGRESSION_LAB_HOST: no devices visible. Fabric state: ZONE_MISMATCH.\n--- Extracted log lines ---\nERROR: FC fabric: host WWPN 68:c1:b8:60:9f:ab:df:6a not found in active zone set. Zone ZONE_ISCSI_REGRESSION_LAB_HOST: no devices visible. Fabric state: ZONE_MISMATCH."
+  },
+  {
+    "build_id": "BUILD-5146",
+    "failed_stage": "Integration Tests",
+    "failure_category": "automation",
+    "failure_component": "VolumeManager",
+    "cleaned_text": "Failure summary: Test framework assertion error due to timing race condition\nComponent: VolumeManager\nError: AssertionError: volume VOLWGOG79NX mount state expected MOUNTED, got MOUNTING. Wait timeout: 120s exceeded. Test: clone_scale.\n--- Extracted log lines ---\nERROR: AssertionError: volume VOL7FTVWU1F mount state expected MOUNTED, got MOUNTING. Wait timeout: 45s exceeded. Test: perf_benchmark."
+  },
+  {
+    "build_id": "BUILD-5147",
+    "failed_stage": "Report",
+    "failure_category": "infrastructure",
+    "failure_component": "iSCSI-Driver",
+    "cleaned_text": "Failure summary: iSCSI target configuration corrupted after lab reset on metro-cluster-env\nComponent: iSCSI-Driver\nError: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:metro-cluster-env:target01 not discoverable. Discovery portal 192.168.7.117:3260 returned empty response.\n--- Extracted log lines ---\nERROR: iscsiadm: no sessions found. Target iqn.2024-01.com.dell:metro-cluster-env:target01 not discoverable. Discovery portal 192.168.205.203:3260 returned empty response."
+  },
+  {
+    "build_id": "BUILD-5148",
+    "failed_stage": "Cleanup",
+    "failure_category": "automation",
+    "failure_component": "VolumeManager",
+    "cleaned_text": "Failure summary: Test framework assertion error due to timing race condition\nComponent: VolumeManager\nError: AssertionError: volume VOL47VMQ9DH mount state expected MOUNTED, got MOUNTING. Wait timeout: 60s exceeded. Test: io_stress.\n--- Extracted log lines ---\nERROR: AssertionError: volume VOL4DSNBFDS mount state expected MOUNTED, got MOUNTING. Wait timeout: 120s exceeded. Test: failover_test."
+  },
+  {
+    "build_id": "BUILD-5149",
+    "failed_stage": "Performance Tests",
+    "failure_category": "product",
+    "failure_component": "NVMe-oF",
+    "cleaned_text": "Failure summary: NVMe-oF discovery failure after controller reset on nvme-cluster-dev\nComponent: NVMe-oF\nError: NVMe discovery log fetch failed: status 0x5E2. Controller A not responding. Retry limit 5 exceeded.\n--- Extracted log lines ---\nERROR: NVMe discovery log fetch failed: status 0xE89. Controller A not responding. Retry limit 5 exceeded."
+  }
+]
