@@ -29,9 +29,9 @@ The mock LLM does not implement real zero-shot/few-shot/chain-of-thought prompt 
 
 | Action class | Precision | Recall | F1 |
 |---|---|---|---|
+| NEW_ISSUE | 1.000 | 0.073 | 0.137 |
 | DUPLICATE | 0.294 | 0.303 | 0.298 |
 | WORKAROUND_AVAILABLE | 0.360 | 0.816 | 0.500 |
-| NEW_ISSUE | 1.000 | 0.073 | 0.137 |
 
 ## 4. Binary Duplicate Detection — Final Confusion Matrix
 

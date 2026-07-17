@@ -83,7 +83,6 @@ LLM_MODEL      = "qwen3:8b"
 RRF_K = 60  # must match the k used in 03_embed_index.py's hybrid_search()
 _RRF_MAX_SCORE = 2 * (1.0 / (RRF_K + 1))          # ≈ 0.0328 — both branches agree
 SIMILARITY_THRESHOLD = 0.6 * _RRF_MAX_SCORE        # ≈ 0.0197 — starting point, tune via sweep
-SIMILARITY_THRESHOLD = 0.82
 TOP_K          = 5
 
 STATUSES_OPEN   = {"Open", "In Progress", "Reopened", "Under Investigation"}
@@ -94,7 +93,7 @@ STATUSES_CLOSED = {"Resolved", "Closed", "Fixed", "Won't Fix", "Duplicate"}
 # LLM CLIENT WRAPPER — swap-friendly (Qwen3-8B today, anything else tomorrow)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def call_llm(prompt: str, system: str = "", temperature: float = 0.1) -> str:
+def call_llm(prompt: str, system: str = "", temperature: float = 0.1, json_format: bool = False) -> str:
     """
     Thin wrapper around the Ollama chat API. Keeping this as a single
     function means swapping Qwen3-8B for a different model later only
@@ -105,11 +104,15 @@ def call_llm(prompt: str, system: str = "", temperature: float = 0.1) -> str:
         messages.append({"role": "system", "content": system})
     messages.append({"role": "user", "content": prompt})
 
-    response = ollama.chat(
-        model=LLM_MODEL,
-        messages=messages,
-        options={"temperature": temperature},
-    )
+    chat_args = {
+        "model": LLM_MODEL,
+        "messages": messages,
+        "options": {"temperature": temperature},
+    }
+    if json_format:
+        chat_args["format"] = "json"
+
+    response = ollama.chat(**chat_args)
     return response["message"]["content"]
 
 
@@ -167,7 +170,7 @@ def prompt2_extract_fields(summary: str, cleaned_log_text: str) -> dict:
         f"SUMMARY: {summary}\n\nLOG:\n{cleaned_log_text}\n\n"
         "Return ONLY the JSON object, nothing else."
     )
-    raw = call_llm(prompt, system=PROMPT_2_SYSTEM)
+    raw = call_llm(prompt, system=PROMPT_2_SYSTEM, json_format=True)
     return extract_json(raw)
 
 
@@ -180,24 +183,82 @@ PROMPT_3_SYSTEM = (
     "of an existing Jira ticket. You ONLY return valid JSON."
 )
 
-def prompt3_duplicate_verdict(bug_fields: dict, candidate_tickets: list[dict]) -> dict:
+def prompt3_duplicate_verdict(bug_fields: dict, candidate_tickets: list[dict], strategy: str = "chain_of_thought") -> dict:
     candidates_text = "\n\n".join(
         f"Ticket {c['payload']['ticket_id']} (score={c['score']:.3f}, "
         f"status={c['payload']['status']}, component={c['payload']['component']}):\n"
         f"{c['payload']['text_blob']}"
         for c in candidate_tickets
     )
-    prompt = (
-        f"NEW FAILURE:\n{json.dumps(bug_fields, indent=2)}\n\n"
-        f"CANDIDATE JIRA TICKETS (top-{len(candidate_tickets)} by semantic similarity):\n"
-        f"{candidates_text}\n\n"
-        "Is the new failure a duplicate of any candidate ticket? Consider the "
-        "component, error type, and symptoms — not just surface wording.\n"
-        "Return ONLY this JSON object:\n"
-        '{"is_duplicate": true/false, "ticket_id": "<id or null>", '
-        '"confidence": 0.0-1.0, "reason": "<one sentence>"}'
-    )
-    raw = call_llm(prompt, system=PROMPT_3_SYSTEM)
+
+    if strategy == "zero_shot":
+        prompt = (
+            f"NEW FAILURE:\n{json.dumps(bug_fields, indent=2)}\n\n"
+            f"CANDIDATE JIRA TICKETS (top-{len(candidate_tickets)} by semantic similarity):\n"
+            f"{candidates_text}\n\n"
+            "Is the new failure a duplicate of any candidate ticket? Consider the "
+            "component, error type, and symptoms — not just surface wording.\n"
+            "Return ONLY this JSON object:\n"
+            '{"is_duplicate": true/false, "ticket_id": "<id or null>", '
+            '"confidence": 0.0-1.0, "reason": "<one sentence>"}'
+        )
+    elif strategy == "few_shot":
+        few_shot_examples = (
+            "EXAMPLE 1:\n"
+            "NEW FAILURE:\n"
+            "{\n"
+            '  "bug_title": "Database connection timeout",\n'
+            '  "component": "Database",\n'
+            '  "error_message": "Connection pool exhausted: Timeout waiting for idle connection after 30000ms",\n'
+            '  "symptoms": "API calls returning HTTP 500 error",\n'
+            '  "category": "product"\n'
+            "}\n\n"
+            "CANDIDATE JIRA TICKETS:\n"
+            "Ticket PSTR-100 (score=0.030, status=Open, component=Database):\n"
+            "Connection timeout on Postgres pool. The system encounters pool exhaustion under heavy load, causing timeout.\n\n"
+            "Verdict:\n"
+            '{"is_duplicate": true, "ticket_id": "PSTR-100", "confidence": 0.95, "reason": "Both describe Postgres connection pool exhaustion timeouts under load."}\n\n'
+            "EXAMPLE 2:\n"
+            "NEW FAILURE:\n"
+            "{\n"
+            '  "bug_title": "Git clone authentication failed",\n'
+            '  "component": "Checkout",\n'
+            '  "error_message": "fatal: Authentication failed for repository",\n'
+            '  "symptoms": "Pipeline fails at Checkout stage",\n'
+            '  "category": "infrastructure"\n'
+            "}\n\n"
+            "CANDIDATE JIRA TICKETS:\n"
+            "Ticket PSTR-200 (score=0.025, status=Closed, component=REST-API):\n"
+            "REST API authentication failure with token expiration.\n\n"
+            "Verdict:\n"
+            '{"is_duplicate": false, "ticket_id": null, "confidence": 0.90, "reason": "New failure is a Git credentials issue, while candidate is REST API token expiration."}\n\n'
+        )
+        prompt = (
+            few_shot_examples +
+            f"NEW FAILURE:\n{json.dumps(bug_fields, indent=2)}\n\n"
+            f"CANDIDATE JIRA TICKETS (top-{len(candidate_tickets)} by semantic similarity):\n"
+            f"{candidates_text}\n\n"
+            "Is the new failure a duplicate of any candidate ticket? Consider the "
+            "component, error type, and symptoms — not just surface wording.\n"
+            "Return ONLY this JSON object:\n"
+            '{"is_duplicate": true/false, "ticket_id": "<id or null>", '
+            '"confidence": 0.0-1.0, "reason": "<one sentence>"}'
+        )
+    else: # chain_of_thought
+        prompt = (
+            f"NEW FAILURE:\n{json.dumps(bug_fields, indent=2)}\n\n"
+            f"CANDIDATE JIRA TICKETS (top-{len(candidate_tickets)} by semantic similarity):\n"
+            f"{candidates_text}\n\n"
+            "Determine if the new failure is a duplicate of any candidate ticket. "
+            "First, think step-by-step in the 'thinking' key of the JSON object, comparing the component, "
+            "error message details, and symptoms of the new failure against the candidates. "
+            "Then, set 'is_duplicate', 'ticket_id', 'confidence', and 'reason' based on your comparison.\n"
+            "Return ONLY this JSON object:\n"
+            '{"thinking": "<step-by-step comparison>", "is_duplicate": true/false, "ticket_id": "<id or null>", '
+            '"confidence": 0.0-1.0, "reason": "<one sentence>"}'
+        )
+
+    raw = call_llm(prompt, system=PROMPT_3_SYSTEM, json_format=True)
     return extract_json(raw)
 
 
@@ -217,7 +278,7 @@ def prompt4_extract_workaround(matched_ticket_text: str) -> dict:
         "If no workaround is present, return an empty list.\n"
         'Return ONLY this JSON object: {"workaround_steps": ["step 1", "step 2", ...]}'
     )
-    raw = call_llm(prompt, system=PROMPT_4_SYSTEM)
+    raw = call_llm(prompt, system=PROMPT_4_SYSTEM, json_format=True)
     return extract_json(raw)
 
 
@@ -287,7 +348,7 @@ def decide_action(verdict_json: dict, candidates: list[dict]) -> str:
 # FULL PIPELINE — one Jenkins failure end-to-end
 # ─────────────────────────────────────────────────────────────────────────────
 
-def triage_one_failure(client: QdrantClient, dense_model, sparse_model, jenkins_log: dict) -> TriageVerdict:
+def triage_one_failure(client: QdrantClient, dense_model, sparse_model, jenkins_log: dict, strategy: str = "chain_of_thought") -> TriageVerdict:
     build_id = jenkins_log["build_id"]
     cleaned_text = jenkins_log["cleaned_text"]
 
@@ -311,7 +372,7 @@ def triage_one_failure(client: QdrantClient, dense_model, sparse_model, jenkins_
         )
 
     # Prompt 3: duplicate verdict
-    verdict_json = prompt3_duplicate_verdict(bug_fields, candidates)
+    verdict_json = prompt3_duplicate_verdict(bug_fields, candidates, strategy=strategy)
     action = decide_action(verdict_json, candidates)
 
     # Prompt 4: workaround extraction (only if action == WORKAROUND_AVAILABLE)

@@ -23,7 +23,6 @@ This is the evaluation chapter of the dissertation, made runnable:
 
 Run:
     python 05_evaluate.py                  # real pipeline (BGE + Qwen3-8B)
-    python 05_evaluate.py --demo           # sandbox-safe mock pipeline
 """
 
 import json
@@ -42,22 +41,22 @@ EVAL_DIR.mkdir(parents=True, exist_ok=True)
 
 sys.path.append(str(SCRIPTS_DIR))
 
-# IMPORTANT — these two sweeps are on DIFFERENT SCALES and must not be mixed:
-#   - PRODUCTION_THRESHOLD_SWEEP: real cosine similarity from BGE-large,
-#     range [-1, 1], matches the 0.82 placeholder in the mid-sem report.
-#   - DEMO_THRESHOLD_SWEEP: RRF-fused rank score (dense+sparse), range
-#     [0, ~0.0328] for RRF_K=60. Sweeping 0.70-0.95 here would never match
-#     anything (see 04b_rag_pipeline_demo.py header comment for the bug
-#     this caused before it was fixed). Expressed as fractions of
-#     RRF_MAX_SCORE so it stays correct if RRF_K ever changes.
-PRODUCTION_THRESHOLD_SWEEP = [0.70, 0.75, 0.80, 0.82, 0.85, 0.90, 0.95]
-DEMO_THRESHOLD_FRACTIONS   = [0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75]
+# IMPORTANT — these two sweeps are on the RRF fused score scale:
+#   - PRODUCTION_THRESHOLD_FRACTIONS: RRF-fused rank score (dense+sparse), range
+#     [0, ~0.0328] for RRF_K=60. Expressed as fractions of RRF_MAX_SCORE so it
+#     stays correct if RRF_K ever changes.
+#   - DEMO_THRESHOLD_FRACTIONS: RRF-fused rank score (dense+sparse), range
+#     [0, ~0.0328] for RRF_K=60.
+PRODUCTION_THRESHOLD_FRACTIONS = [0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75]
+DEMO_THRESHOLD_FRACTIONS       = [0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75]
 PROMPTING_STRATEGIES = ["zero_shot", "few_shot", "chain_of_thought"]
 
 
 def get_threshold_sweep(mode: str) -> list[float]:
     if mode == "production":
-        return PRODUCTION_THRESHOLD_SWEEP
+        import importlib
+        rag = importlib.import_module("04_rag_pipeline")
+        return [round(f * rag._RRF_MAX_SCORE, 5) for f in PRODUCTION_THRESHOLD_FRACTIONS]
     import importlib
     demo_rag = importlib.import_module("04b_rag_pipeline_demo")
     return [round(f * demo_rag.RRF_MAX_SCORE, 5) for f in DEMO_THRESHOLD_FRACTIONS]
@@ -138,31 +137,10 @@ def run_full_pipeline(mode: str, strategy: str = "chain_of_thought",
     Executes the triage pipeline on every preprocessed Jenkins log and
     returns a list of prediction dicts. `mode` is "production" or "demo".
 
-    `similarity_threshold` (production mode only): real cosine similarity
-    from BGE-large, range [-1, 1]. This IS a meaningful experiment in
-    production — real dense embeddings produce genuinely separable
-    similarity scores between true/false duplicates, unlike the demo path
-    below.
+    `similarity_threshold` (production mode only): RRF fused score threshold.
 
     `strategy` selects the Prompt 3 variant (production mode only — the
     real Qwen3-8B call is reformulated as zero-shot/few-shot/CoT).
-
-    DEMO MODE DOES NOT USE A SWEEPABLE THRESHOLD. Investigation (see
-    mock_prompt3_duplicate_verdict docstring in 04b_rag_pipeline_demo.py)
-    found that with this dataset's small per-category candidate pool,
-    NEITHER the raw RRF fusion score (mean 0.03257 vs 0.03255 for true vs
-    false duplicates) NOR keyword overlap (matched ticket actually scores
-    *lower* than wrong candidates 89% of the time) separate the classes —
-    a numeric threshold swept over either signal is decorative, not
-    informative. The demo's mock LLM verdict now uses template-fingerprint
-    matching instead (the same signal used to construct ground truth),
-    which has no continuous threshold to sweep — it's a categorical match/
-    no-match check. `similarity_threshold` and `strategy` are therefore
-    accepted but IGNORED in demo mode; this function returns identical
-    predictions regardless of their value, and the threshold-sweep/
-    strategy-comparison experiments report this explicitly rather than
-    silently producing a flat, meaningless curve (which is what happened
-    before this was caught — every sweep point returned the same metrics).
     """
     with open(OUT_DIR / "jenkins_preprocessed.json") as f:
         jenkins_logs = json.load(f)
@@ -182,7 +160,7 @@ def run_full_pipeline(mode: str, strategy: str = "chain_of_thought",
         try:
             predictions = []
             for log in jenkins_logs:
-                verdict = rag.triage_one_failure(client, dense_model, sparse_model, log)
+                verdict = rag.triage_one_failure(client, dense_model, sparse_model, log, strategy=strategy)
                 predictions.append(asdict(verdict))
             return predictions
         finally:
@@ -281,7 +259,7 @@ def run_threshold_sweep(mode: str, ground_truth: dict) -> list[dict]:
         result = {"threshold": None, **bm}
         return [result], result
 
-    print("EXPERIMENT 1 — Cosine similarity threshold sweep")
+    print("EXPERIMENT 1 — RRF fusion score similarity threshold sweep")
     print(f"{'='*70}")
     sweep = get_threshold_sweep(mode)
     baseline_predictions = run_full_pipeline(
@@ -382,7 +360,7 @@ def write_markdown_report(threshold_results, best_threshold,
                      "*is* meaningful — run it on your machine for the dissertation-"
                      "reportable threshold-tuning result.\n")
     else:
-        lines.append("## 1. Threshold Sweep (cosine similarity, 0.70–0.95)\n")
+        lines.append("## 1. Threshold Sweep (RRF fusion score, 15%–75% of max)\n")
         lines.append("| Threshold | Precision | Recall | F1 | TP | FP | FN | TN |")
         lines.append("|---|---|---|---|---|---|---|---|")
         for r in threshold_results:
