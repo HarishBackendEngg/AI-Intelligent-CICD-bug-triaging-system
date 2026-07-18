@@ -3,17 +3,17 @@
     "build_id": "BUILD-5000",
     "failure_category": "product",
     "bug_fields": {
-      "bug_title": "REST-API Cleanup Failed: 401 Unauthorized Due to Expired Token",
+      "bug_title": "REST-API Component Failed Due to Expired Token in Long-Running Tests",
       "component": "REST-API",
-      "error_message": "DELETE /api/rest/v1/volume/VOL89DLBNP7 returned HTTP 401 Unauthorized",
-      "symptoms": "19 volumes orphaned on fc-matrix-env environment",
+      "error_message": "HTTP 401 Unauthorized: Token expired during long-running test suite",
+      "symptoms": "Cleanup script failed to delete volumes, leaving 19 orphaned volumes on FC matrix environment",
       "category": "product"
     },
     "top_match_ticket_id": null,
-    "top_match_score": 0.6111111111111112,
+    "top_match_score": 0.8333333333333333,
     "is_duplicate": false,
-    "confidence": 1.0,
-    "reason": "No candidate above similarity threshold",
+    "confidence": 0.2,
+    "reason": "The new failure involves 401 Unauthorized token expiration in REST-API during long-running tests, which is not matched by any candidate ticket's 500 errors or ENOSPC issues.",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -30,8 +30,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.5,
     "is_duplicate": false,
-    "confidence": 1.0,
-    "reason": "No candidate above similarity threshold",
+    "confidence": 0.1,
+    "reason": "The new failure involves VolumeManager mount state timeouts with unique error messaging and component, which does not match any candidate tickets' DNS resolution issues or NFS permission problems.",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -41,15 +41,15 @@
     "bug_fields": {
       "bug_title": "SnapEngine ENOSPC Error: Space Accounting Mismatch",
       "component": "SnapEngine",
-      "error_message": "ENOSPC: Space accounting mismatch between available blocks and metadata reserved",
-      "symptoms": "Snapshot creation failed with ENOSPC, preventing storage allocation despite available space",
+      "error_message": "ENOSPC (No space left on device)",
+      "symptoms": "Inconsistent available_blocks and metadata_reserved values causing snapshot creation failure",
       "category": "product"
     },
     "top_match_ticket_id": "PSTR-1032",
     "top_match_score": 1.0,
     "is_duplicate": true,
     "confidence": 0.95,
-    "reason": "Identical ENOSPC error in SnapEngine's space accounting causing snapshot failures despite available space, with matching component and root cause description.",
+    "reason": "The new failure matches the same space accounting bug and ENOSPC symptoms described in PSTR-1032, which was marked as a duplicate.",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Run pool reclamation task manually: powerstore pool reclaim --id {pool_id} --force",
@@ -60,19 +60,23 @@
     "build_id": "BUILD-5003",
     "failure_category": "product",
     "bug_fields": {
-      "bug_title": "AutoSupport Upload Fails Due to TLS Handshake Incompatibility",
+      "bug_title": "AutoSupport TLS Handshake Failure Due to TLS Version Incompatibility",
       "component": "AutoSupport",
-      "error_message": "SSL_ERROR_HANDSHAKE_FAILURE: Incompatible TLS versions (TLS 1.0 vs. required TLS 1.2+)",
-      "symptoms": "AutoSupport upload fails with SSL_ERROR_HANDSHAKE_FAILURE indicating server requires TLS 1.2+",
+      "error_message": "SSL_ERROR_HANDSHAKE_FAILURE, TLS_version=TLSv1.0. Server requires TLS 1.2+",
+      "symptoms": "AutoSupport upload failure due to TLS handshake error, preventing communication with the server",
       "category": "product"
     },
-    "top_match_ticket_id": null,
+    "top_match_ticket_id": "PSTR-1199",
     "top_match_score": 0.7,
-    "is_duplicate": false,
-    "confidence": 1.0,
-    "reason": "No candidate above similarity threshold",
-    "action": "NEW_ISSUE",
-    "workaround_steps": []
+    "is_duplicate": true,
+    "confidence": 0.95,
+    "reason": "The new failure matches the TLS version incompatibility issue and symptoms described in PSTR-1199 and other candidates.",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Update AutoSupport client to version 3.5.2 or later to enforce TLS 1.2",
+      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1.2 enforcement",
+      "Manually upload queued support bundles via dell.com/support"
+    ]
   },
   {
     "build_id": "BUILD-5004",
@@ -87,8 +91,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.55,
     "is_duplicate": false,
-    "confidence": 1.0,
-    "reason": "No candidate above similarity threshold",
+    "confidence": 0.2,
+    "reason": "The new failure involves a Python dependency version conflict causing ImportError, which is fundamentally different from the REST API 500 errors and database contention issues in the candidate tickets.",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   }

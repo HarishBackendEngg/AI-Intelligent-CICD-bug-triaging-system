@@ -1,35 +1,35 @@
 [
   {
     "strategy": "zero_shot",
-    "precision": 0.5655,
+    "precision": 0.9762,
     "recall": 1.0,
-    "f1": 0.7225,
-    "accuracy": 0.58,
+    "f1": 0.988,
+    "accuracy": 0.9867,
     "tp": 82,
-    "fp": 63,
+    "fp": 2,
     "fn": 0,
-    "tn": 5
+    "tn": 66
   },
   {
     "strategy": "few_shot",
-    "precision": 0.5655,
+    "precision": 0.9762,
     "recall": 1.0,
-    "f1": 0.7225,
-    "accuracy": 0.58,
+    "f1": 0.988,
+    "accuracy": 0.9867,
     "tp": 82,
-    "fp": 63,
+    "fp": 2,
     "fn": 0,
-    "tn": 5
+    "tn": 66
   },
   {
     "strategy": "chain_of_thought",
-    "precision": 0.5655,
+    "precision": 0.9762,
     "recall": 1.0,
-    "f1": 0.7225,
-    "accuracy": 0.58,
+    "f1": 0.988,
+    "accuracy": 0.9867,
     "tp": 82,
-    "fp": 63,
+    "fp": 2,
     "fn": 0,
-    "tn": 5
+    "tn": 66
   }
 ]

@@ -9,17 +9,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1204",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1204",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Cleanup job now uses service account with non-expiring token",
-      "Token refresh added as first step of cleanup script",
-      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --force"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.78,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5001",
@@ -34,8 +30,8 @@
     "top_match_ticket_id": "PSTR-1174",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1174",
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1174",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -52,8 +48,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
     "is_duplicate": false,
-    "confidence": 0.55,
-    "reason": "No candidate shares the same underlying failure template",
+    "confidence": 0.76,
+    "reason": "No matching duplicate ticket found in candidate pool",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -89,16 +85,16 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1198",
+    "top_match_ticket_id": "PSTR-1156",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
     "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1198",
+    "reason": "Semantic analysis indicates match with candidate PSTR-1156",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "txt updated with pinned compatible versions",
       "Dependency audit added to CI pipeline pre-check stage",
-      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinstall in"
+      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinsta"
     ]
   },
   {
@@ -114,8 +110,8 @@
     "top_match_ticket_id": "PSTR-1169",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1169",
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1169",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Upgrade sequencer fixed to handle unexpected reboots gracefully",
@@ -133,17 +129,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1093",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
+    "is_duplicate": false,
     "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1093",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Pipeline now uses isolated environment namespaces per run",
-      "Environment variables scoped to pipeline execution context",
-      "Always run tests with explicit --target flag: pytest --target={cor"
-    ]
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5007",
@@ -155,17 +147,13 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1232",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1232",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Test suite execution configuration reviewed",
-      "Marker expressions validated against expected test counts as gate check",
-      "Update Jenkinsfile pytest command: change '-m sanity and not integration"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.89,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5008",
@@ -177,12 +165,12 @@
       "symptoms": "Observed during Metro-Volume validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1031",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1031",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.9,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -195,12 +183,12 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1283",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1283",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.75,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -213,16 +201,16 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1156",
+    "top_match_ticket_id": "PSTR-1198",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1156",
+    "confidence": 0.96,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1198",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "txt updated with pinned compatible versions",
       "Dependency audit added to CI pipeline pre-check stage",
-      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinsta"
+      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinstall in"
     ]
   },
   {
@@ -235,17 +223,13 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1123",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1123",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Alert threshold lowered to 80% to provide advance warning",
-      "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
-      "Then run pool cleanup ta"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.94,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5012",
@@ -260,8 +244,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
     "is_duplicate": false,
-    "confidence": 0.55,
-    "reason": "No candidate shares the same underlying failure template",
+    "confidence": 0.9,
+    "reason": "No matching duplicate ticket found in candidate pool",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -275,12 +259,12 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1244",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.87,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -293,17 +277,13 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1006",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1006",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Alert threshold lowered to 80% to provide advance warning",
-      "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
-      "Then run pool cleanup task"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.79,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5015",
@@ -315,17 +295,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1078",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1078",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Cleanup job now uses service account with non-expiring token",
-      "Token refresh added as first step of cleanup script",
-      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --for"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.76,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5016",
@@ -340,8 +316,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
     "is_duplicate": false,
-    "confidence": 0.55,
-    "reason": "No candidate shares the same underlying failure template",
+    "confidence": 0.89,
+    "reason": "No matching duplicate ticket found in candidate pool",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -377,17 +353,13 @@
       "symptoms": "Observed during FaultManager validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1082",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1082",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Upgrade sequencer fixed to handle unexpected reboots gracefully",
-      "Rollback and retry logic added in upgrade framework",
-      "Run upgrade recovery procedure: powerstore upgrade recover --array {env}"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.78,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5019",
@@ -399,16 +371,16 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1226",
+    "top_match_ticket_id": "PSTR-1259",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1226",
+    "confidence": 0.89,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1259",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Baseline memory profiled and limits set to peak+20% headroom",
       "Increase Docker container memory limit to {new_limit}MB in docker-compose",
-      "Reduce concurrent stress t"
+      "Reduce concurrent stress threads from"
     ]
   },
   {
@@ -439,13 +411,17 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1282",
+    "top_match_ticket_id": "PSTR-1159",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1282",
-    "action": "DUPLICATE",
-    "workaround_steps": []
+    "confidence": 0.88,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1159",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "iSCSI session keepalive timer corrected for high-throughput workloads",
+      "Update to version 4",
+      "Reduce iSCSI queue depth from 64 to 32 on initia"
+    ]
   },
   {
     "build_id": "BUILD-5022",
@@ -457,17 +433,13 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1196",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1196",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Memory usage reduced by 90%",
-      "Report generation stable for suites up to 10,000 tests",
-      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report generatio"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.86,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5023",
@@ -479,17 +451,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1204",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1204",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Cleanup job now uses service account with non-expiring token",
-      "Token refresh added as first step of cleanup script",
-      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --force"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.88,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5024",
@@ -519,17 +487,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1093",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1093",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Pipeline now uses isolated environment namespaces per run",
-      "Environment variables scoped to pipeline execution context",
-      "Always run tests with explicit --target flag: pytest --target={cor"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.84,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5026",
@@ -541,17 +505,13 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1051",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1051",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "RAM module replaced",
-      "Node stable post hardware fix",
-      "Reboot test node via IPMI: ipmitool -H {env}-ipmi -U admin -P admin chassis power reset"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.83,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5027",
@@ -563,12 +523,12 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1000",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1000",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.82,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -581,16 +541,16 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1092",
+    "top_match_ticket_id": "PSTR-1223",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1092",
+    "confidence": 0.92,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1223",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "FC switch firmware update process updated to preserve zoning configuration",
       "Validation step added post-upgrade",
-      "Re-apply correct zone configuration from backup: fcadmin zone activate BACKUP_ZONE"
+      "Re-apply correct zone configuration from backup: fcadmin zone activate BACKUP_"
     ]
   },
   {
@@ -603,17 +563,13 @@
       "symptoms": "Observed during Kubernetes-CSI validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1295",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1295",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Affects 4 stateful pods",
-      "CSI driver now handles node reboot events and re-establishes iSCSI sessions automatically in CSI version 4",
-      "Manually restart iscsid service on affected node: systemctl restart iscsid"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.92,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5030",
@@ -625,17 +581,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1093",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1093",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Pipeline now uses isolated environment namespaces per run",
-      "Environment variables scoped to pipeline execution context",
-      "Always run tests with explicit --target flag: pytest --target={cor"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.77,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5031",
@@ -647,17 +599,13 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "AutoSupport client updated to enforce TLS 1",
-      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1",
-      "Or manually upload bundles via dell"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.86,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5032",
@@ -757,17 +705,13 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1249",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1249",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Lab reset script updated to preserve iSCSI configuration backup before reset",
-      "Configuration restored from backup",
-      "Re-run iSCSI target provisioning playbook: ansible-playbook setup_iscsi_targets"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.88,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5037",
@@ -782,8 +726,8 @@
     "top_match_ticket_id": "PSTR-1247",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1247",
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1247",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -797,12 +741,12 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1236",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1236",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.94,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -815,17 +759,13 @@
       "symptoms": "Observed during VASA-Provider validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1193",
+    "top_match_ticket_id": "PSTR-1275",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1193",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "SSL session renewal logic fixed",
-      "VASA now refreshes certificates 24h before expiry",
-      "Restart VASA provider service via PowerStore Manager: Settings > VMware Integration > VASA Provider > Restart"
-    ]
+    "confidence": 0.88,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1275",
+    "action": "DUPLICATE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5040",
@@ -837,17 +777,13 @@
       "symptoms": "Observed during NVMe-oF validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1064",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1064",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Root cause: discovery log flush was skipped during fast failover path",
-      "Fix applied to controller reset sequence in 4",
-      "Manually restart nvme-target service on the array after failover"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.78,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5041",
@@ -859,11 +795,11 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1008",
+    "top_match_ticket_id": "PSTR-1127",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1008",
+    "confidence": 0.94,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1127",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Compliance scan exclusion list updated to preserve CI NFS shares",
@@ -903,11 +839,11 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1038",
+    "top_match_ticket_id": "PSTR-1014",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1038",
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1014",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "DNS failover now automatic with 10-second failover time",
@@ -925,11 +861,11 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1204",
+    "top_match_ticket_id": "PSTR-1267",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1204",
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1267",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Cleanup job now uses service account with non-expiring token",
@@ -950,8 +886,8 @@
     "top_match_ticket_id": "PSTR-1223",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1223",
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1223",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "FC switch firmware update process updated to preserve zoning configuration",
@@ -969,17 +905,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1204",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1204",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Cleanup job now uses service account with non-expiring token",
-      "Token refresh added as first step of cleanup script",
-      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --force"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5047",
@@ -1013,17 +945,13 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1007",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1007",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Lab reset script updated to preserve iSCSI configuration backup before reset",
-      "Configuration restored from backup",
-      "Re-run iSCSI target provisioning playbook: ansible-playbook setup_iscsi_targets"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.76,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5049",
@@ -1035,17 +963,13 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1017",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1017",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Node stable post hardware fix",
-      "Reboot test node via IPMI: ipmitool -H {env}-ipmi -U admin -P admin chassis power reset",
-      "Wait 5 minutes befor"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.89,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5050",
@@ -1079,17 +1003,13 @@
       "symptoms": "Observed during SnapEngine validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1242",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1242",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Patch included in 4",
-      "Run pool reclamation task manually: powerstore pool reclaim --id {pool_id} --force",
-      "Then retry snapshot cre"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.83,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5052",
@@ -1104,8 +1024,8 @@
     "top_match_ticket_id": "PSTR-1062",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1062",
+    "confidence": 0.89,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1062",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "SSL session renewal logic fixed",
@@ -1123,12 +1043,12 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1061",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1061",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.88,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -1141,11 +1061,11 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1244",
+    "top_match_ticket_id": "PSTR-1153",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
+    "confidence": 0.96,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1153",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -1184,8 +1104,8 @@
     "top_match_ticket_id": "PSTR-1244",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
+    "confidence": 0.94,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1244",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -1199,17 +1119,13 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1222",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1222",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Updated network monitoring to alert on flapping within 30 seconds",
-      "Move test traffic to backup switch port",
-      "Update /etc/network/interfaces to us"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.95,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5058",
@@ -1221,17 +1137,13 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1092",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1092",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "FC switch firmware update process updated to preserve zoning configuration",
-      "Validation step added post-upgrade",
-      "Re-apply correct zone configuration from backup: fcadmin zone activate BACKUP_ZONE"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.82,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5059",
@@ -1243,11 +1155,11 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1039",
+    "top_match_ticket_id": "PSTR-1113",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1039",
+    "confidence": 0.92,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1113",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -1261,12 +1173,12 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1244",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.82,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -1279,12 +1191,12 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1207",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1207",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -1297,17 +1209,13 @@
       "symptoms": "Observed during FaultManager validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1082",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1082",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Upgrade sequencer fixed to handle unexpected reboots gracefully",
-      "Rollback and retry logic added in upgrade framework",
-      "Run upgrade recovery procedure: powerstore upgrade recover --array {env}"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.94,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5063",
@@ -1359,17 +1267,13 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1138",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1138",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Lab reset script updated to preserve iSCSI configuration backup before reset",
-      "Configuration restored from backup",
-      "Re-run iSCSI target provisioning playbook: ansible-playbook setup_iscsi_targets"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.92,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5066",
@@ -1403,11 +1307,11 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1096",
+    "top_match_ticket_id": "PSTR-1053",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1096",
+    "confidence": 0.92,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1053",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "DNS failover now automatic with 10-second failover time",
@@ -1450,8 +1354,8 @@
     "top_match_ticket_id": "PSTR-1008",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1008",
+    "confidence": 0.98,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1008",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Compliance scan exclusion list updated to preserve CI NFS shares",
@@ -1491,17 +1395,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1204",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1204",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Cleanup job now uses service account with non-expiring token",
-      "Token refresh added as first step of cleanup script",
-      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --force"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5072",
@@ -1513,17 +1413,13 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1006",
+    "top_match_ticket_id": "PSTR-1126",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
     "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1006",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Alert threshold lowered to 80% to provide advance warning",
-      "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
-      "Then run pool cleanup task"
-    ]
+    "reason": "Semantic analysis indicates match with candidate PSTR-1126",
+    "action": "DUPLICATE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5073",
@@ -1535,17 +1431,13 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1196",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1196",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Memory usage reduced by 90%",
-      "Report generation stable for suites up to 10,000 tests",
-      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report generatio"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.9,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5074",
@@ -1579,11 +1471,11 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1039",
+    "top_match_ticket_id": "PSTR-1113",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1039",
+    "confidence": 0.97,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1113",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -1597,12 +1489,12 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1244",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.77,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -1615,16 +1507,16 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1175",
+    "top_match_ticket_id": "PSTR-1209",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1175",
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1209",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
+      "RAM module replaced",
       "Node stable post hardware fix",
-      "Reboot test node via IPMI: ipmitool -H {env}-ipmi -U admin -P admin chassis power reset",
-      "Wait 5 minutes before re-running"
+      "Reboot test node via IPMI: ipmitool -H {env}-ipmi -U admin -P admin chassis power reset"
     ]
   },
   {
@@ -1637,12 +1529,12 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1244",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.87,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -1677,17 +1569,13 @@
       "symptoms": "Observed during NVMe-oF validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1064",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1064",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Root cause: discovery log flush was skipped during fast failover path",
-      "Fix applied to controller reset sequence in 4",
-      "Manually restart nvme-target service on the array after failover"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.76,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5081",
@@ -1717,17 +1605,13 @@
       "symptoms": "Observed during Kubernetes-CSI validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1295",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1295",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Affects 4 stateful pods",
-      "CSI driver now handles node reboot events and re-establishes iSCSI sessions automatically in CSI version 4",
-      "Manually restart iscsid service on affected node: systemctl restart iscsid"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.79,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5083",
@@ -1739,17 +1623,13 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1226",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1226",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Baseline memory profiled and limits set to peak+20% headroom",
-      "Increase Docker container memory limit to {new_limit}MB in docker-compose",
-      "Reduce concurrent stress t"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5084",
@@ -1761,16 +1641,16 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1099",
+    "top_match_ticket_id": "PSTR-1074",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1099",
+    "confidence": 0.97,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1074",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "FC switch firmware update process updated to preserve zoning configuration",
       "Validation step added post-upgrade",
-      "Re-apply correct zone configuration from backup: fcadmin zone activate BACKUP_ZONE"
+      "Re-apply correct zone configuration from backup: fcadmin zone activate BACKUP_ZON"
     ]
   },
   {
@@ -1808,8 +1688,8 @@
     "top_match_ticket_id": "PSTR-1242",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1242",
+    "confidence": 0.91,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1242",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Patch included in 4",
@@ -1827,17 +1707,13 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "AutoSupport client updated to enforce TLS 1",
-      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1",
-      "Or manually upload bundles via dell"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.94,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5088",
@@ -1867,11 +1743,11 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": "PSTR-1184",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1184",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "AutoSupport client updated to enforce TLS 1",
@@ -1889,16 +1765,16 @@
       "symptoms": "Observed during Data-Reduction validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1050",
+    "top_match_ticket_id": "PSTR-1079",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1050",
+    "confidence": 0.96,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1079",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "No workaround needed post-patch",
       "Disable per-volume encryption and use array-level encryption instead",
-      "Re-enable dedup policy a"
+      "Re-enable dedup policy after"
     ]
   },
   {
@@ -1911,16 +1787,16 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1222",
+    "top_match_ticket_id": "PSTR-1218",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1222",
+    "confidence": 0.94,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1218",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Updated network monitoring to alert on flapping within 30 seconds",
       "Move test traffic to backup switch port",
-      "Update /etc/network/interfaces to us"
+      "Update /etc/network/interfaces"
     ]
   },
   {
@@ -1933,17 +1809,13 @@
       "symptoms": "Observed during NVMe-oF validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1064",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1064",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Root cause: discovery log flush was skipped during fast failover path",
-      "Fix applied to controller reset sequence in 4",
-      "Manually restart nvme-target service on the array after failover"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5093",
@@ -1955,13 +1827,17 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1230",
+    "top_match_ticket_id": "PSTR-1256",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1230",
-    "action": "DUPLICATE",
-    "workaround_steps": []
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1256",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "DNS failover now automatic with 10-second failover time",
+      "Add static /etc/hosts entries for critical test nodes",
+      "Set DNS TTL to 3600s to survive short outages"
+    ]
   },
   {
     "build_id": "BUILD-5094",
@@ -1973,11 +1849,11 @@
       "symptoms": "Observed during Metro-Volume validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1031",
+    "top_match_ticket_id": "PSTR-1041",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1031",
+    "confidence": 0.91,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1041",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -1991,12 +1867,12 @@
       "symptoms": "Observed during Performance-Monitor validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1219",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1219",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.84,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -2009,17 +1885,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1299",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1299",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "txt updated with pinned compatible versions",
-      "Dependency audit added to CI pipeline pre-check stage",
-      "Pin library versions: pip install requests=={req_ver} RequestsLibrary=={lib_ver} --force-reinstall i"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.84,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5097",
@@ -2075,11 +1947,11 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": "PSTR-1184",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
+    "confidence": 0.91,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1184",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "AutoSupport client updated to enforce TLS 1",
@@ -2097,17 +1969,13 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1256",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1256",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "DNS failover now automatic with 10-second failover time",
-      "Add static /etc/hosts entries for critical test nodes",
-      "Set DNS TTL to 3600s to survive short outages"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.8,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5101",
@@ -2119,11 +1987,11 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1256",
+    "top_match_ticket_id": "PSTR-1205",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1256",
+    "confidence": 0.89,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1205",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "DNS failover now automatic with 10-second failover time",
@@ -2163,12 +2031,12 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1244",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1244",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.77,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -2184,8 +2052,8 @@
     "top_match_ticket_id": "PSTR-1219",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1219",
+    "confidence": 0.96,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1219",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -2199,17 +2067,13 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": "PSTR-1185",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "AutoSupport client updated to enforce TLS 1",
-      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1",
-      "Or manually upload bundles via dell"
-    ]
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1185",
+    "action": "DUPLICATE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5106",
@@ -2221,17 +2085,13 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1053",
+    "top_match_ticket_id": null,
     "top_match_score": 0.031544957774465976,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1053",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "DNS failover now automatic with 10-second failover time",
-      "Add static /etc/hosts entries for critical test nodes",
-      "Set DNS TTL to 3600s to survive short outages"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.89,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5107",
@@ -2268,8 +2128,8 @@
     "top_match_ticket_id": "PSTR-1162",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1162",
+    "confidence": 0.91,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1162",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "SSL session renewal logic fixed",
@@ -2287,17 +2147,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1093",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1093",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Pipeline now uses isolated environment namespaces per run",
-      "Environment variables scoped to pipeline execution context",
-      "Always run tests with explicit --target flag: pytest --target={cor"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.79,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5110",
@@ -2309,12 +2165,12 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1207",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1207",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.79,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -2327,17 +2183,13 @@
       "symptoms": "Observed during FaultManager validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1082",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1082",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Upgrade sequencer fixed to handle unexpected reboots gracefully",
-      "Rollback and retry logic added in upgrade framework",
-      "Run upgrade recovery procedure: powerstore upgrade recover --array {env}"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.86,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5112",
@@ -2349,16 +2201,16 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1196",
+    "top_match_ticket_id": "PSTR-1280",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1196",
+    "confidence": 0.98,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1280",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Memory usage reduced by 90%",
       "Report generation stable for suites up to 10,000 tests",
-      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report generatio"
+      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report generation"
     ]
   },
   {
@@ -2371,17 +2223,13 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": "PSTR-1185",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "AutoSupport client updated to enforce TLS 1",
-      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1",
-      "Or manually upload bundles via dell"
-    ]
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1185",
+    "action": "DUPLICATE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5114",
@@ -2393,17 +2241,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1093",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1093",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Pipeline now uses isolated environment namespaces per run",
-      "Environment variables scoped to pipeline execution context",
-      "Always run tests with explicit --target flag: pytest --target={cor"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.92,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5115",
@@ -2440,8 +2284,8 @@
     "top_match_ticket_id": "PSTR-1219",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1219",
+    "confidence": 0.97,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1219",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -2455,17 +2299,13 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1144",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1144",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Lab reset script updated to preserve iSCSI configuration backup before reset",
-      "Configuration restored from backup",
-      "Re-run iSCSI target provisioning playbook: ansible-playbook setup_iscsi_targets"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.84,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5118",
@@ -2521,16 +2361,16 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1123",
+    "top_match_ticket_id": "PSTR-1011",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1123",
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1011",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Alert threshold lowered to 80% to provide advance warning",
       "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
-      "Then run pool cleanup ta"
+      "Then run pool cle"
     ]
   },
   {
@@ -2543,11 +2383,11 @@
       "symptoms": "Observed during NVMe-oF validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1064",
+    "top_match_ticket_id": "PSTR-1043",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1064",
+    "confidence": 0.97,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1043",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Root cause: discovery log flush was skipped during fast failover path",
@@ -2565,17 +2405,13 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1204",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032018442622950824,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1204",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Cleanup job now uses service account with non-expiring token",
-      "Token refresh added as first step of cleanup script",
-      "Manually delete orphaned volumes: powerstore volume delete --name 'temp-test-*' --force"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5123",
@@ -2587,16 +2423,16 @@
       "symptoms": "Observed during Data-Reduction validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1050",
+    "top_match_ticket_id": "PSTR-1246",
     "top_match_score": 0.032266458495966696,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1050",
+    "confidence": 0.89,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1246",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "No workaround needed post-patch",
       "Disable per-volume encryption and use array-level encryption instead",
-      "Re-enable dedup policy a"
+      "Re-enable dedup policy after"
     ]
   },
   {
@@ -2612,8 +2448,8 @@
     "top_match_ticket_id": "PSTR-1062",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1062",
+    "confidence": 0.89,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1062",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "SSL session renewal logic fixed",
@@ -2631,17 +2467,13 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1196",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1196",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Memory usage reduced by 90%",
-      "Report generation stable for suites up to 10,000 tests",
-      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report generatio"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.86,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5126",
@@ -2653,12 +2485,12 @@
       "symptoms": "Observed during Metro-Volume validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1031",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1031",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.95,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -2671,11 +2503,11 @@
       "symptoms": "Observed during Performance-Monitor validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1219",
+    "top_match_ticket_id": "PSTR-1012",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1219",
+    "confidence": 0.96,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1012",
     "action": "DUPLICATE",
     "workaround_steps": []
   },
@@ -2707,13 +2539,17 @@
       "symptoms": "Observed during REST-API validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1039",
+    "top_match_ticket_id": "PSTR-1005",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1039",
-    "action": "DUPLICATE",
-    "workaround_steps": []
+    "confidence": 0.96,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1005",
+    "action": "WORKAROUND_AVAILABLE",
+    "workaround_steps": [
+      "Certificate auto-renewal configured via certbot with 30-day advance renewal",
+      "Monitoring alert added for cert expiry",
+      "Temporarily disable SSL verification in test framework: export REQUESTS_CA_BUNDL"
+    ]
   },
   {
     "build_id": "BUILD-5130",
@@ -2747,16 +2583,16 @@
       "symptoms": "Observed during PowerStore-Core validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1196",
+    "top_match_ticket_id": "PSTR-1033",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
     "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1196",
+    "reason": "Semantic analysis indicates match with candidate PSTR-1033",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Memory usage reduced by 90%",
       "Report generation stable for suites up to 10,000 tests",
-      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report generatio"
+      "Increase JVM heap: export JAVA_OPTS='-Xmx4g' before report ge"
     ]
   },
   {
@@ -2769,12 +2605,12 @@
       "symptoms": "Observed during Metro-Volume validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1031",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1031",
-    "action": "DUPLICATE",
+    "is_duplicate": false,
+    "confidence": 0.84,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
     "workaround_steps": []
   },
   {
@@ -2787,11 +2623,11 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": "PSTR-1184",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
+    "confidence": 0.98,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1184",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "AutoSupport client updated to enforce TLS 1",
@@ -2831,17 +2667,13 @@
       "symptoms": "Observed during AutoSupport validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1063",
+    "top_match_ticket_id": "PSTR-1185",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1063",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "AutoSupport client updated to enforce TLS 1",
-      "Configure proxy to handle TLS upgrade: set https_proxy with TLS 1",
-      "Or manually upload bundles via dell"
-    ]
+    "confidence": 0.94,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1185",
+    "action": "DUPLICATE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5136",
@@ -2878,8 +2710,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
     "is_duplicate": false,
-    "confidence": 0.55,
-    "reason": "No candidate shares the same underlying failure template",
+    "confidence": 0.9,
+    "reason": "No matching duplicate ticket found in candidate pool",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -2893,16 +2725,16 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1011",
+    "top_match_ticket_id": "PSTR-1006",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1011",
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1006",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Alert threshold lowered to 80% to provide advance warning",
       "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
-      "Then run pool cle"
+      "Then run pool cleanup task"
     ]
   },
   {
@@ -2915,17 +2747,13 @@
       "symptoms": "Observed during StoragePool validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1123",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1123",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Alert threshold lowered to 80% to provide advance warning",
-      "Delete old test snapshots: powerstore snapshot delete --older-than 7d",
-      "Then run pool cleanup ta"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.88,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5140",
@@ -2962,8 +2790,8 @@
     "top_match_ticket_id": "PSTR-1065",
     "top_match_score": 0.03252247488101534,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1065",
+    "confidence": 0.9,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1065",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "Jenkinsfile syntax validated before merge allowed",
@@ -3003,17 +2831,13 @@
       "symptoms": "Observed during HealthMonitor validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1053",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1053",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "DNS failover now automatic with 10-second failover time",
-      "Add static /etc/hosts entries for critical test nodes",
-      "Set DNS TTL to 3600s to survive short outages"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.75,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5144",
@@ -3028,8 +2852,8 @@
     "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
     "is_duplicate": false,
-    "confidence": 0.55,
-    "reason": "No candidate shares the same underlying failure template",
+    "confidence": 0.87,
+    "reason": "No matching duplicate ticket found in candidate pool",
     "action": "NEW_ISSUE",
     "workaround_steps": []
   },
@@ -3043,17 +2867,13 @@
       "symptoms": "Observed during FC-HBA validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1223",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1223",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "FC switch firmware update process updated to preserve zoning configuration",
-      "Validation step added post-upgrade",
-      "Re-apply correct zone configuration from backup: fcadmin zone activate BACKUP_"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.8,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5146",
@@ -3068,8 +2888,8 @@
     "top_match_ticket_id": "PSTR-1140",
     "top_match_score": 0.03278688524590164,
     "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1140",
+    "confidence": 0.95,
+    "reason": "Semantic analysis indicates match with candidate PSTR-1140",
     "action": "WORKAROUND_AVAILABLE",
     "workaround_steps": [
       "All volume operation tests now use wait_for_stable_state() helper",
@@ -3087,17 +2907,13 @@
       "symptoms": "Observed during iSCSI-Driver validation; pipeline marked FAILURE",
       "category": "infrastructure"
     },
-    "top_match_ticket_id": "PSTR-1007",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03252247488101534,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1007",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Lab reset script updated to preserve iSCSI configuration backup before reset",
-      "Configuration restored from backup",
-      "Re-run iSCSI target provisioning playbook: ansible-playbook setup_iscsi_targets"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.89,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5148",
@@ -3109,17 +2925,13 @@
       "symptoms": "Observed during VolumeManager validation; pipeline marked FAILURE",
       "category": "automation"
     },
-    "top_match_ticket_id": "PSTR-1026",
+    "top_match_ticket_id": null,
     "top_match_score": 0.032266458495966696,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1026",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "All volume operation tests now use wait_for_stable_state() helper",
-      "Add explicit wait_for_state() call with 120s timeout before mount assertion",
-      "Use polling interval of 5s"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.91,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   },
   {
     "build_id": "BUILD-5149",
@@ -3131,16 +2943,12 @@
       "symptoms": "Observed during NVMe-oF validation; pipeline marked FAILURE",
       "category": "product"
     },
-    "top_match_ticket_id": "PSTR-1064",
+    "top_match_ticket_id": null,
     "top_match_score": 0.03278688524590164,
-    "is_duplicate": true,
-    "confidence": 0.93,
-    "reason": "Template signal matches ticket PSTR-1064",
-    "action": "WORKAROUND_AVAILABLE",
-    "workaround_steps": [
-      "Root cause: discovery log flush was skipped during fast failover path",
-      "Fix applied to controller reset sequence in 4",
-      "Manually restart nvme-target service on the array after failover"
-    ]
+    "is_duplicate": false,
+    "confidence": 0.88,
+    "reason": "No matching duplicate ticket found in candidate pool",
+    "action": "NEW_ISSUE",
+    "workaround_steps": []
   }
 ]

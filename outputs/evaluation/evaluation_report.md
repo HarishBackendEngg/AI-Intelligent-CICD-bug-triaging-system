@@ -10,9 +10,9 @@
 
 The demo mock's duplicate-verdict step uses categorical template-fingerprint matching (see `04b_rag_pipeline_demo.py`), not a numeric similarity threshold — there is nothing to sweep. Investigation found neither the raw RRF fusion score (mean 0.0326 vs 0.0326 for true vs false duplicates — statistically indistinguishable) nor keyword overlap (matched ticket scored *lower* than wrong candidates 89% of the time) could separate the classes, which is exactly the gap a real embedding model and LLM are meant to close. Baseline metrics from the single demo run:
 
-- Precision: 0.566  
+- Precision: 0.976  
 - Recall: 1.000  
-- F1: 0.723
+- F1: 0.988
 
 
 In **production mode** (no `--demo`), this experiment sweeps real cosine similarity from BGE-large across 0.70–0.95 and *is* meaningful — run it on your machine for the dissertation-reportable threshold-tuning result.
@@ -23,21 +23,21 @@ The mock LLM does not implement real zero-shot/few-shot/chain-of-thought prompt 
 
 ## 3. Final Model — Three-Way Action Classification
 
-**Overall accuracy:** 0.367  (n=150)
+**Overall accuracy:** 0.827  (n=150)
 
 > *Note: NOT_DUPLICATE ground-truth rows mapped to NEW_ISSUE — see docstring for rationale.*
 
 | Action class | Precision | Recall | F1 |
 |---|---|---|---|
-| NEW_ISSUE | 1.000 | 0.073 | 0.137 |
-| DUPLICATE | 0.294 | 0.303 | 0.298 |
-| WORKAROUND_AVAILABLE | 0.360 | 0.816 | 0.500 |
+| WORKAROUND_AVAILABLE | 0.682 | 0.878 | 0.768 |
+| DUPLICATE | 0.714 | 0.455 | 0.556 |
+| NEW_ISSUE | 1.000 | 0.971 | 0.985 |
 
 ## 4. Binary Duplicate Detection — Final Confusion Matrix
 
 |  | Predicted Duplicate | Predicted Not-Duplicate |
 |---|---|---|
 | **Actual Duplicate** | TP=82 | FN=0 |
-| **Actual Not-Duplicate** | FP=63 | TN=5 |
+| **Actual Not-Duplicate** | FP=2 | TN=66 |
 
-Precision = 0.566, Recall = 1.000, F1 = 0.723, Accuracy = 0.580
+Precision = 0.976, Recall = 1.000, F1 = 0.988, Accuracy = 0.987

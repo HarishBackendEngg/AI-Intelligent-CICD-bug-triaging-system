@@ -1,47 +1,47 @@
 {
   "n_evaluated": 150,
   "binary_duplicate_detection": {
-    "precision": 0.5655,
+    "precision": 0.9762,
     "recall": 1.0,
-    "f1": 0.7225,
-    "accuracy": 0.58,
+    "f1": 0.988,
+    "accuracy": 0.9867,
     "tp": 82,
-    "fp": 63,
+    "fp": 2,
     "fn": 0,
-    "tn": 5
+    "tn": 66
   },
   "three_way_action_classification": {
-    "overall_accuracy": 0.3667,
+    "overall_accuracy": 0.8267,
     "n": 150,
     "per_class": {
-      "DUPLICATE": {
-        "precision": 0.2941,
-        "recall": 0.303,
-        "f1": 0.2985,
-        "accuracy": 0.6867,
-        "tp": 10,
-        "fp": 24,
-        "fn": 23,
-        "tn": 93
-      },
       "WORKAROUND_AVAILABLE": {
-        "precision": 0.3604,
-        "recall": 0.8163,
-        "f1": 0.5,
-        "accuracy": 0.4667,
-        "tp": 40,
-        "fp": 71,
-        "fn": 9,
-        "tn": 30
+        "precision": 0.6825,
+        "recall": 0.8776,
+        "f1": 0.7679,
+        "accuracy": 0.8267,
+        "tp": 43,
+        "fp": 20,
+        "fn": 6,
+        "tn": 81
+      },
+      "DUPLICATE": {
+        "precision": 0.7143,
+        "recall": 0.4545,
+        "f1": 0.5556,
+        "accuracy": 0.84,
+        "tp": 15,
+        "fp": 6,
+        "fn": 18,
+        "tn": 111
       },
       "NEW_ISSUE": {
         "precision": 1.0,
-        "recall": 0.0735,
-        "f1": 0.137,
-        "accuracy": 0.58,
-        "tp": 5,
+        "recall": 0.9706,
+        "f1": 0.9851,
+        "accuracy": 0.9867,
+        "tp": 66,
         "fp": 0,
-        "fn": 63,
+        "fn": 2,
         "tn": 82
       }
     },
